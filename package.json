@@ -1,12 +1,39 @@
 {
   "name": "semester_project_2_2024",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Auction site application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "format": "prettier -w src/**/*.js",
+    "prepare": "husky install"
   },
-  "keywords": ["Bootstrap", "SCSS", "Website"],
+  "keywords": [
+    "Bootstrap",
+    "SCSS",
+    "Website"
+  ],
   "author": "Siril O. Vaular",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
 }
