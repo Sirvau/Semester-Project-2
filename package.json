@@ -4,6 +4,8 @@
   "description": "Auction site application",
   "main": "index.js",
   "scripts": {
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css",
     "test": "",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
@@ -22,7 +24,8 @@
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "sass": "^1.75.0"
   },
   "lint-staged": {
     "*.js": [
