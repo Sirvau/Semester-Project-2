@@ -6,7 +6,8 @@
   "scripts": {
     "test": "",
     "lint": "eslint **/*.js",
-    "lint-fix": "eslint **/*.js --cache --fix"
+    "lint-fix": "eslint **/*.js --cache --fix",
+    "format": "prettier -w **/*.js"
   },
   "keywords": [
     "Bootstrap",
@@ -17,6 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.1.1",
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
   }
 }
