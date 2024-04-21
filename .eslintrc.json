@@ -1,0 +1,23 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+      {
+        "files": [],
+        "env": {},
+        "plugins": [],
+        "extends": [],
+        "rules": { "jest/prefer-expect-assertions": "off" }
+      }
+    ],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-undef": "off"
+    }
+  }
