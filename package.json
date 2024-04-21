@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "lint": "eslint **/*.js",
-    "lint-fix": "eslint **/*.js --cache --fix",
-    "format": "prettier -w **/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "format": "prettier -w src/**/*.js",
     "prepare": "husky install"
   },
   "keywords": [
@@ -26,8 +26,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --cache --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --cache --fix"
     ],
     "*.html": [
       "prettier --write"
