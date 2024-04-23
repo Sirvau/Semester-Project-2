@@ -3,11 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/81a562339c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="dist/css/index.css" />
+    <meta
+      description="
+    Welcome to Last Bid Auction Site. The best auction for unique quality items.
+    "
+    />
+
     <title>Home | Last Bid</title>
   </head>
   <body>
-    <h1 class="text-warning">Test text</h1>
-    <button class="btn btn-primary">This is my test button</button>
+    <header class="container col-sm-11">
+      <div class="row align-items-start align-items-lg-center my-3">
+        <a class="navbar-brand col-4" href="#">
+          <img
+            src="/src/images/logo_Last_Bid.png"
+            alt="Logo Last Bid Auction Site"
+            width="200"
+            height="260"
+          />
+        </a>
+        <nav class="navbar navbar-expand-lg col justify-content-end">
+          <button
+            class="navbar-toggler mx-4 border-0"
+            id="hamburger-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon border-0"></span>
+          </button>
+          <div class="collapse navbar-collapse p-4 m-2 bg-body" id="navbar">
+            <div
+              class="navbar-nav text-uppercase nav-underline text-center"
+              role="button"
+            >
+              <a class="nav-link" href="#">Listed Items</a>
+              <a class="nav-link disabled" href="#" aria-disabled="true"
+                >Post a listing</a
+              >
+              <a class="nav-link" href="#"
+                ><i class="fa-solid fa-arrow-right-to-bracket"></i
+              ></a>
+              <a class="nav-link"><i class="fa-solid fa-user"></i> </a>
+              <a class="nav-link" aria-current="page" href="#"
+                ><i class="fa-solid fa-house"></i
+              ></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container d-flex justify-content-end my-5">
+        <form class="d-flex col" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </header>
+    <main></main>
+    <footer></footer>
   </body>
 </html>
