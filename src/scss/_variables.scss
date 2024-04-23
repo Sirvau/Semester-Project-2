@@ -10,3 +10,68 @@
   outline: 0;
   box-shadow: none !important;
 }
+
+// ------------------------------------------------------------ Theme color variables--------------------------------------------------------------------------------------------
+
+// scss-docs-start color-variables
+$blue: #aebdc2;
+$light-blue: #d5e7ed;
+$dark-blue: #5a686d;
+$pink: #f7d7ca;
+$light-pink: #fef1e9;
+$dark-pink: #f5c6af;
+$cognac-brown: #5f1f01;
+$dark-brown: #2d0f00;
+$green: #83ab99;
+$light-green: #badfce;
+$dark-green: #435a4f;
+
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  'blue': $blue,
+  'light-blue': $light-blue,
+  'dark-blue': $dark-blue,
+  'pink': $pink,
+  'light-pink': $light-pink,
+  'dark-pink': $dark-pink,
+  'cognac-brown': $cognac-brown,
+  'dark-brown': $dark-brown,
+  'green': $green,
+  'light-green': $light-green,
+  'dark-green': $dark-green,
+);
+// scss-docs-end colors-map
+
+// scss-docs-start theme-color-variables
+$primary: $light-pink;
+$primary-details: $pink;
+$primary-details-dark: $dark-pink;
+$secondary: $cognac-brown;
+$tertiary: $blue;
+$tertiary-details-light: $light-blue;
+$tertiary-details-dark: $dark-blue;
+$attention: $green;
+$attention-light: $light-green;
+$attention-dark: $dark-green;
+$light: $light-pink;
+$dark: $dark-brown;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  'primary': $primary,
+  'primary-details': $primary-details,
+  'primary-details-dark': $primary-details-dark,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+  'tertiary-details-light': $tertiary-details-light,
+  'tertiary-details-dark': $tertiary-details-dark,
+  'attention': $attention,
+  'attention-light': $attention-light,
+  'attention-dark': $attention-dark,
+  'light': $light,
+  'dark': $dark,
+);
+// scss-docs-end theme-colors-map
