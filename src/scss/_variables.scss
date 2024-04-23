@@ -1,1 +1,12 @@
 //Copy variables from "../../node_modules/bootstrap/scss/bootstrap/variables" here:
+
+//Navbar
+.navbar-nav {
+  text-align: right;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none !important;
+}
