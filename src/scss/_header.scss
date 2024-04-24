@@ -1,0 +1,27 @@
+@import 'variables';
+@import 'text';
+
+//Navbar
+
+nav {
+  .navbar-nav {
+    text-align: right;
+    letter-spacing: $body-letter-spacing;
+  }
+
+  .nav-link {
+    color: $dark;
+  }
+
+  .nav-link:hover {
+    color: $cognac-brown;
+    text-decoration: underline solid $primary-details 2px;
+    font-weight: $hover-font-weight;
+  }
+
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none !important;
+  }
+}

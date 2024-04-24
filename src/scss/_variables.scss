@@ -1,19 +1,6 @@
-//Copy variables from "../../node_modules/bootstrap/scss/bootstrap/variables" here:
-
-//Navbar
-.navbar-nav {
-  text-align: right;
-}
-
-.navbar-toggler:focus {
-  text-decoration: none;
-  outline: 0;
-  box-shadow: none !important;
-}
-
 // ------------------------------------------------------------ Theme color variables--------------------------------------------------------------------------------------------
 
-// scss-docs-start color-variables
+// scss-docs-copy-start color-variables
 $blue: #aebdc2;
 $light-blue: #d5e7ed;
 $dark-blue: #5a686d;
@@ -25,10 +12,9 @@ $dark-brown: #2d0f00;
 $green: #83ab99;
 $light-green: #badfce;
 $dark-green: #435a4f;
+// scss-docs-copy-end color-variables
 
-// scss-docs-end color-variables
-
-// scss-docs-start colors-map
+// scss-docs-copy-start colors-map
 $colors: (
   'blue': $blue,
   'light-blue': $light-blue,
@@ -42,9 +28,9 @@ $colors: (
   'light-green': $light-green,
   'dark-green': $dark-green,
 );
-// scss-docs-end colors-map
+// scss-docs-copy-end colors-map
 
-// scss-docs-start theme-color-variables
+// scss-docs-copy-start theme-color-variables
 $primary: $light-pink;
 $primary-details: $pink;
 $primary-details-dark: $dark-pink;
@@ -57,9 +43,9 @@ $attention-light: $light-green;
 $attention-dark: $dark-green;
 $light: $light-pink;
 $dark: $dark-brown;
-// scss-docs-end theme-color-variables
+// scss-docs-copy-end theme-color-variables
 
-// scss-docs-start theme-colors-map
+// scss-docs-copy-start theme-colors-map
 $theme-colors: (
   'primary': $primary,
   'primary-details': $primary-details,
@@ -74,4 +60,27 @@ $theme-colors: (
   'light': $light,
   'dark': $dark,
 );
-// scss-docs-end theme-colors-map
+// scss-docs-copy-end theme-colors-map
+
+// ------------------------------------------------------------ Font variables--------------------------------------------------------------------------------------------
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:
+  'Open Sans',
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  'Noto Sans',
+  'Liberation Sans',
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji';
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  'Liberation Mono', 'Courier New', monospace;
+// stylelint-enable value-keyword-case
+$font-family-base: var(--#{$prefix}font-sans-serif);
+$font-family-code: var(--#{$prefix}font-monospace);

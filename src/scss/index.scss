@@ -1,2 +1,15 @@
+// Configuration
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
 @import 'variables';
+@import '../../node_modules/bootstrap/scss/maps';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/utilities';
+
+// Bootstrap main file
 @import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Custom styles
+@import 'buttons';
+@import 'text';
+@import 'header';
