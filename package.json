@@ -1,6 +1,6 @@
 {
   "name": "semester_project_2_2024",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Auction site application",
   "main": "index.js",
   "scripts": {
