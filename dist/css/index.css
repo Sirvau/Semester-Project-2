@@ -12245,6 +12245,10 @@ h3, .h3 {
   font-weight: 300;
 }
 
+hr {
+  border-top: 1px dashed #5f1f01;
+}
+
 .main-header {
   font-family: "Playful Display";
   text-transform: uppercase;
@@ -12259,6 +12263,10 @@ h3, .h3 {
 
 h3, .h3 {
   font-weight: 300;
+}
+
+hr {
+  border-top: 1px dashed #5f1f01;
 }
 
 nav .navbar-nav {

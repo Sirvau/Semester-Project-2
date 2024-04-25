@@ -1,5 +1,13 @@
-.fa-chevron-up {
+@import 'variables';
+
+.fa-chevron-up,
+.fa-chevron-down {
   border: 1px dashed;
   padding: 20px;
   border-radius: 45px;
+  color: $secondary;
+}
+
+.fa-chevron-up:hover {
+  background-color: $primary-details;
 }
