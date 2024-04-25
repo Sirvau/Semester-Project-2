@@ -8,10 +8,15 @@ $hover-font-weight: 600;
 .main-header {
   font-family: $font-family-main-header;
   text-transform: uppercase;
+  letter-spacing: $body-letter-spacing;
 }
 
 .body-text {
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
   color: $dark-brown;
+}
+
+h3 {
+  font-weight: 300;
 }
