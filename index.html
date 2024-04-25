@@ -23,9 +23,9 @@
 
     <title>Home | Last Bid</title>
   </head>
-  <body>
+  <body class="bg-primary text-dark">
     <header class="container col-sm-11">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg mb-5">
         <div class="container-fluid">
           <a class="navbar-brand col-4" href="#">
             <img
@@ -51,12 +51,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto text-uppercase">
               <li class="nav-item me-4">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="/Listed-items/"
-                  >Listed Items</a
-                >
+                <a class="nav-link" href="/Listed-items/">Listed Items</a>
               </li>
               <li class="nav-item me-4">
                 <a
@@ -82,8 +77,178 @@
           </div>
         </div>
       </nav>
+      <div
+        class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-4 my-0"
+      >
+        <form class="d-flex col-12 col-md-6" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
     </header>
-    <main></main>
-    <footer></footer>
+    <main class="container col-sm-11 mb-5">
+      <section
+        id="hero-section"
+        class="bg-primary-details-dark row-11 d-md-inline-flex"
+      >
+        <div class="py-4 text-center col-12 col-md-6">
+          <h1 class="main-header mt-2 my-lg-3">
+            New<span class="text-lowercase d-block"> extraordenary </span>art
+          </h1>
+          <h3 class="body-text mt-4 mt-md-5">up for bids</h3>
+        </div>
+        <div class="text-center col-12 col-md-6 p-4">
+          <img
+            class="img-fluid"
+            id="hero-art"
+            src="/src/images/index_hero_art.jpg"
+            alt="Framed art on top of furniture, promoting art listings"
+          />
+          <a href="#" class="btn btn-secondary col-12 my-3 py-2"
+            >Explore all <i class="fa-solid fa-angle-right"> </i
+          ></a>
+        </div>
+      </section>
+      <section
+        class="row-11 mt-5 text-center d-md-inline-flex justify-content-evenly"
+      >
+        <div
+          class="bg-tertiary-details-dark col col-md-5 mt-5 mt-sm-2 py-4 px-5"
+        >
+          <h2 class="main-header text-primary body-letter-spacing mt-3">
+            Time Keepers
+          </h2>
+          <img
+            class="img-fluid"
+            id="hero-art"
+            src="/src/images/index_explore_time_keepers.jpg"
+            alt="Framed art on top of furniture, promoting art listings"
+          />
+          <a href="#" class="btn btn-tertiary col-12 my-3 py-2"
+            >Explore all <i class="fa-solid fa-angle-right"> </i
+          ></a>
+        </div>
+        <div
+          class="bg-attention-dark d-none d-md-block col col-md-5 mt-5 mt-sm-2 py-4 px-5"
+        >
+          <h2 class="main-header text-primary body-letter-spacing mt-3">
+            Furnitures
+          </h2>
+          <img
+            class="img-fluid"
+            id="hero-art"
+            src="/src/images/index_explore_furnitures.jpg"
+            alt="Framed art on top of furniture, promoting art listings"
+          />
+          <a href="#" class="btn btn-attention col-12 my-3 py-2"
+            >Explore all <i class="fa-solid fa-angle-right"> </i
+          ></a>
+        </div>
+      </section>
+
+      <section
+        class="d-flex row justify-content-center text-center bg-dark my-5 py-5"
+      >
+        <h2 class="text-primary main-header body-letter-spacing mb-5">
+          Recent Listings
+        </h2>
+        <div
+          class="container d-flex justify-content-center justify-content-md-evenly row flex-wrap"
+        >
+          <div class="card bg-primary col-8 col-md-5 col-xl-2 mb-4">
+            <img
+              src="/src/images/index-recent-listings.jpg"
+              class="card-img-top recent-listing-image mt-3"
+              alt="Item alt.text"
+            />
+            <div class="card-body vstack gap-2">
+              <h5 class="item-title recent-listing-title main-header">
+                Item title
+              </h5>
+              <p class="card-text recent-listing-price">000 $</p>
+              <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
+            </div>
+          </div>
+
+          <div class="card bg-primary col-8 col-md-5 col-xl-2 mb-4">
+            <img
+              src="/src/images/index-recent-listings.jpg"
+              class="card-img-top recent-listing-image mt-3"
+              alt="Item alt.text"
+            />
+            <div class="card-body vstack gap-2">
+              <h5 class="item-title recent-listing-title main-header">
+                Item title
+              </h5>
+              <p class="card-text recent-listing-price">000 $</p>
+              <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
+            </div>
+          </div>
+
+          <div class="card bg-primary col-8 col-md-5 col-xl-2 mb-4">
+            <img
+              src="/src/images/index-recent-listings.jpg"
+              class="card-img-top recent-listing-image mt-3"
+              alt="Item alt.text"
+            />
+            <div class="card-body vstack gap-2">
+              <h5 class="item-title recent-listing-title main-header">
+                Item title
+              </h5>
+              <p class="card-text recent-listing-price">000 $</p>
+              <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
+            </div>
+          </div>
+
+          <div class="card bg-primary col-8 col-md-5 col-xl-2 mb-4">
+            <img
+              src="/src/images/index-recent-listings.jpg"
+              class="card-img-top recent-listing-image mt-3"
+              alt="Item alt.text"
+            />
+            <div class="card-body vstack gap-2">
+              <h5 class="item-title recent-listing-title main-header">
+                Item title
+              </h5>
+              <p class="card-text recent-listing-price">000 $</p>
+              <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="text-center">
+        <a href="#"><i class="fa-solid fa-chevron-up text-dark"></i></a>
+      </div>
+    </main>
+    <footer class="bg-primary-details mt-5 py-5 text-center">
+      <a class="navbar-brand" href="#">
+        <img
+          class="mb-5"
+          id="logo-last-bid"
+          src="/src/images/logo_Last_Bid.png"
+          alt="Logo Last Bid Auction Site"
+          width="150"
+          height="190"
+        />
+      </a>
+      <div class="d-flex justify-content-center">
+        <a href="https://www.instagram.com/"
+          ><i class="fa-brands fa-instagram p-2 m-2"></i
+        ></a>
+        <a href="https://www.facebook.com/"
+          ><i class="fa-brands fa-facebook p-2 m-2"></i
+        ></a>
+        <a href="https://twitter.com/"
+          ><i class="fa-brands fa-x-twitter p-2 m-2"></i
+        ></a>
+      </div>
+    </footer>
   </body>
 </html>
