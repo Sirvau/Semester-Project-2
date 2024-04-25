@@ -1,6 +1,6 @@
 // ------------------------------------------------------------ Theme color variables--------------------------------------------------------------------------------------------
 
-// scss-docs-copy-start color-variables
+// Color-variables
 $blue: #aebdc2;
 $light-blue: #d5e7ed;
 $dark-blue: #5a686d;
@@ -12,9 +12,8 @@ $dark-brown: #2d0f00;
 $green: #83ab99;
 $light-green: #badfce;
 $dark-green: #435a4f;
-// scss-docs-copy-end color-variables
 
-// scss-docs-copy-start colors-map
+// Colors-map
 $colors: (
   'blue': $blue,
   'light-blue': $light-blue,
@@ -28,9 +27,8 @@ $colors: (
   'light-green': $light-green,
   'dark-green': $dark-green,
 );
-// scss-docs-copy-end colors-map
 
-// scss-docs-copy-start theme-color-variables
+// Theme-color-variables
 $primary: $light-pink;
 $primary-details: $pink;
 $primary-details-dark: $dark-pink;
@@ -43,9 +41,8 @@ $attention-light: $light-green;
 $attention-dark: $dark-green;
 $light: $light-pink;
 $dark: $dark-brown;
-// scss-docs-copy-end theme-color-variables
 
-// scss-docs-copy-start theme-colors-map
+// Theme-colors-map
 $theme-colors: (
   'primary': $primary,
   'primary-details': $primary-details,
@@ -60,11 +57,10 @@ $theme-colors: (
   'light': $light,
   'dark': $dark,
 );
-// scss-docs-copy-end theme-colors-map
 
 // ------------------------------------------------------------ Font variables--------------------------------------------------------------------------------------------
 
-// stylelint-disable value-keyword-case
+// Font-families
 $font-family-sans-serif:
   'Open Sans',
   -apple-system,
@@ -84,3 +80,33 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 // stylelint-enable value-keyword-case
 $font-family-base: var(--#{$prefix}font-sans-serif);
 $font-family-code: var(--#{$prefix}font-monospace);
+
+// Font-sizes
+$h1-font-size: $font-size-base * 4;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base !default;
+
+// Buttons
+
+// Border
+$border-width: 1px;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+);
+$border-style: solid;
+$border-color: $gray-300;
+$border-color-translucent: rgba($black, 0.175);
+
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
+$border-radius-xxl: 2rem;
+$border-radius-pill: 50rem;
