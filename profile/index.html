@@ -45,7 +45,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto text-uppercase">
+            <ul class="navbar-nav ms-auto text-formatting">
               <li class="nav-item me-4">
                 <a class="nav-link" href="/Listed-items/">Listed Items</a>
               </li>
@@ -66,7 +66,7 @@
               </li>
               <li class="nav-item me-4">
                 <a class="nav-link" href="#"
-                  ><i class="fa-regular fa-user"></i
+                  ><i class="fa-regular fa-user fs-4"></i
                 ></a>
               </li>
             </ul>
@@ -74,9 +74,9 @@
         </div>
       </nav>
       <div
-        class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-4 my-0"
+        class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-5 my-0"
       >
-        <form class="d-flex col-12 col-md-6" role="search">
+        <form class="d-none d-flex col-12 col-md-6" role="search">
           <input
             class="form-control me-2"
             type="search"
@@ -84,13 +84,42 @@
             aria-label="Search"
           />
           <button class="btn btn-outline-success" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass fs-4 text-primary"></i>
           </button>
         </form>
       </div>
     </header>
-    <main class="container col-sm-11 mb-5">
-      <section class="row-11"></section>
+    <main class="container col-sm-11 col-md-10 col-xl-9 col-xxl-8 mb-5">
+      <section
+        class="container text-center d-md-flex justify-content-md-center align-items-md-center my-5 py-5"
+      >
+        <div
+          class="container edit-icon-avatar-image-container col-8 col-md-4 col-lg-3 d-flex"
+        >
+          <div class="avatar-image">
+            <img
+              class="rounded-circle img-thumbnail border-0 mx-auto d-block"
+              src="../src/images/avatar-image.png"
+              alt="Personal avatar image"
+            />
+          </div>
+          <a class="edit-icon" href="#"
+            ><i class="fa-solid fa-user-pen fs-4 text-dark"></i
+          ></a>
+        </div>
+        <div
+          class="container user-info-container col-12 col-md-6 col-lg-5 my-5 py-5 border border-secondary rounded-bottom-4"
+        >
+          <h1 class="username main-header h2 text-formatting">Username</h1>
+          <p class="user-credit body-text text-formatting fw-bold fs-4 mt-4">
+            1000 $
+          </p>
+          <p class="body-text text-formatting mt-4">Total credit</p>
+          <a href="#" class="btn btn-secondary text-formatting px-5 mt-5"
+            >Post a listing</a
+          >
+        </div>
+      </section>
 
       <div class="text-center my-5 py-5">
         <a role="button" href="#"
