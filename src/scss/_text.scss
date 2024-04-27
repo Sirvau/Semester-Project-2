@@ -5,15 +5,17 @@ $font-family-main-header: 'Playful Display';
 $body-letter-spacing: 2px;
 $hover-font-weight: 600;
 
-.main-header {
-  font-family: $font-family-main-header;
+.text-formatting {
   text-transform: uppercase;
   letter-spacing: $body-letter-spacing;
 }
 
+.main-header {
+  font-family: $font-family-main-header;
+}
+
 .body-text {
   font-family: $font-family-sans-serif;
-  text-transform: uppercase;
   color: $dark-brown;
 }
 
