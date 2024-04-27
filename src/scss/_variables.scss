@@ -100,10 +100,10 @@ $border-widths: (
   4: 4px,
   5: 5px,
 );
-$border-style: solid;
+
+$border-style: dashed;
 $border-color: $secondary;
 $border-color-translucent: $secondary;
-
 $border-radius: 0.375rem;
 $border-radius-sm: 0.25rem;
 $border-radius-lg: 0.5rem;
