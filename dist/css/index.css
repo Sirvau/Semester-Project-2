@@ -12273,12 +12273,10 @@ hr {
   border-top: 1px dashed #5f1f01;
 }
 
-nav .navbar-nav {
-  text-align: right;
-  letter-spacing: 2px;
-}
 nav .nav-link {
   color: #2d0f00;
+  text-align: right;
+  letter-spacing: 2px;
 }
 nav .nav-link:hover {
   color: #5f1f01;
