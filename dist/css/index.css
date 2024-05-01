@@ -12285,10 +12285,12 @@ hr {
   display: none;
 }
 
-nav .nav-link {
-  color: #2d0f00;
+nav .navbar-nav {
   text-align: right;
   letter-spacing: 2px;
+}
+nav .nav-link {
+  color: #2d0f00;
 }
 nav .nav-link:hover {
   color: #5f1f01;
