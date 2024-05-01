@@ -12243,12 +12243,18 @@ textarea.form-control-lg {
   color: #2d0f00;
 }
 
-h3, .h3 {
+h3, .h3,
+h4,
+.h4 {
   font-weight: 300;
 }
 
 hr {
   border-top: 1px dashed #5f1f01;
+}
+
+.hidden {
+  display: none;
 }
 
 .text-formatting {
@@ -12265,7 +12271,9 @@ hr {
   color: #2d0f00;
 }
 
-h3, .h3 {
+h3, .h3,
+h4,
+.h4 {
   font-weight: 300;
 }
 
@@ -12273,12 +12281,14 @@ hr {
   border-top: 1px dashed #5f1f01;
 }
 
-nav .navbar-nav {
-  text-align: right;
-  letter-spacing: 2px;
+.hidden {
+  display: none;
 }
+
 nav .nav-link {
   color: #2d0f00;
+  text-align: right;
+  letter-spacing: 2px;
 }
 nav .nav-link:hover {
   color: #5f1f01;

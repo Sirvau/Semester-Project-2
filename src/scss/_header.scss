@@ -4,13 +4,10 @@
 //Navbar
 
 nav {
-  .navbar-nav {
-    text-align: right;
-    letter-spacing: $body-letter-spacing;
-  }
-
   .nav-link {
     color: $dark;
+    text-align: right;
+    letter-spacing: $body-letter-spacing;
   }
 
   .nav-link:hover {
