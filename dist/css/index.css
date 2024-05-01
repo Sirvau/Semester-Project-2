@@ -12243,12 +12243,18 @@ textarea.form-control-lg {
   color: #2d0f00;
 }
 
-h3, .h3 {
+h3, .h3,
+h4,
+.h4 {
   font-weight: 300;
 }
 
 hr {
   border-top: 1px dashed #5f1f01;
+}
+
+.hidden {
+  display: none;
 }
 
 .text-formatting {
@@ -12265,12 +12271,18 @@ hr {
   color: #2d0f00;
 }
 
-h3, .h3 {
+h3, .h3,
+h4,
+.h4 {
   font-weight: 300;
 }
 
 hr {
   border-top: 1px dashed #5f1f01;
+}
+
+.hidden {
+  display: none;
 }
 
 nav .nav-link {

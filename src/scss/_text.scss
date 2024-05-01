@@ -19,7 +19,8 @@ $hover-font-weight: 600;
   color: $dark-brown;
 }
 
-h3 {
+h3,
+h4 {
   font-weight: 300;
 }
 
@@ -30,3 +31,6 @@ hr {
 }
 
 //inputs
+.hidden {
+  display: none;
+}

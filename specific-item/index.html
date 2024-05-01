@@ -183,7 +183,7 @@
                 </a>
               </li>
               <li class="nav-item me-4">
-                <a class="nav-link" href="#"
+                <a class="nav-link" href="/profile/"
                   ><i class="fa-regular fa-user fs-4"></i
                 ></a>
               </li>
@@ -249,39 +249,125 @@
             </div>
           </div>
         </div>
-        <div class="container col-xxl-5 border rounded-bottom-4">
+        <div class="container col-xxl-5 border rounded-bottom-3">
           <h1
             id="specific-title"
             class="main-header h2 text-center text-formatting mt-5 mb-4"
           >
             Item title
           </h1>
-          <p id="specific-description" class="body-text fs-5 mx-5">
+          <p id="specific-description" class="container body-text">
             Item description... Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Sagittis id consectetur purus ut. Aenean
             pharetra magna ac placerat vestibulum lectus mauris ultrices eros.
           </p>
           <div class="text-center">
-            <p class="body-text text-formatting fs-4">Current bid:</p>
+            <p class="body-text text-formatting fs-5 mt-5">Current bid:</p>
             <p
               id="specific-current-bid"
-              class="body-text text-formatting fw-bold fs-4"
+              class="body-text text-formatting fw-bold fs-5"
             >
               000 $
             </p>
+
             <a
               href="#"
-              class="btn btn-tertiary body-text text-formatting text-dark fs-5 mt-5 mb-5 py-3 px-5"
-              >Place a bid</a
+              id="place-a-bid-button"
+              data-bs-target="#place-bid-modal-toggle"
+              data-bs-toggle="modal"
+              class="btn btn-tertiary body-text text-formatting text-dark mt-5 mb-5 py-2 px-4"
+              >Place Bid</a
             >
+            <div
+              class="modal fade"
+              id="place-bid-modal-toggle"
+              aria-hidden="true"
+              aria-labelledby="place-bid-modal-toggle-label"
+              tabindex="-1"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 container bg-primary">
+                  <div class="modal-header border-0 row">
+                    <button
+                      type="button"
+                      class="btn-close row"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                    <div>
+                      <h1
+                        class="main-header text-formatting text-center h2 mt-3 mb-4"
+                        id="place-bid-modal-toggle-label"
+                      >
+                        Place a Bid
+                      </h1>
+                      <h2 class="text-formatting h4">Item title</h2>
+                      <hr />
+                    </div>
+                  </div>
+                  <div class="modal-body border-0">
+                    <form
+                      id="place-listing-form"
+                      name="auth"
+                      method="post"
+                      class="container"
+                    >
+                      <div class="form-group row mt-1 mb-5">
+                        <div class="d-flex justify-content-center align-center">
+                          <img
+                            src="../src/images/index_explore_furnitures.jpg"
+                            id="specific-item-bid-img"
+                            class="img-thumbnail"
+                            width="300"
+                            height="450"
+                          />
+                        </div>
+                        <div
+                          class="hstack gap-2 text-formatting d-flex justify-content-center"
+                        >
+                          <p class="my-5 fs-5 me-2">Current bid:</p>
+                          <p class="my-5 fw-bold fs-5">000 $</p>
+                        </div>
+                        <div
+                          class="container hstack d-flex justify-content-center text-formatting"
+                        >
+                          <p class="text-formatting col-5">New Bid:</p>
+                          <label for="bid-input" class="text-formatting">
+                            <span class="hidden">New bid:</span>
+                            <input
+                              type="number"
+                              name="bid-input"
+                              class="form-control bg-primary mb-3 me-5"
+                              id="bid-input"
+                            />
+                          </label>
+                        </div>
+                      </div>
+                    </form>
+                    <div
+                      class="container d-flex justify-content-center pb-3 mb-5"
+                    >
+                      <button
+                        class="btn btn-attention text-formatting px-5 py-2"
+                        type="submit"
+                        value="submit"
+                        id="bid-button"
+                      >
+                        Submit Bid
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <a
         href="/Listed-items/"
-        class="btn btn-outline-tertiary text-dark body-text text-formatting fs-5 mt-1 mb-1 py-3 px-4"
-        ><i class="fa-solid fa-angle-left px-4"> </i>Back to feed</a
+        class="btn btn-outline-tertiary text-dark body-text text-formatting px-3 py-2"
+        ><i class="fa-solid fa-angle-left px-2"> </i>Back to feed</a
       >
 
       <div class="text-center my-5 py-5">
