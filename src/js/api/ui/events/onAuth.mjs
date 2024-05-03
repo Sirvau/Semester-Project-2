@@ -1,3 +1,6 @@
+import { login } from '../../auth/login.mjs';
+import { register } from '../../auth/registration.mjs';
+
 //Authorization event
 export async function onAuth(event) {
   event.preventDefault();
@@ -5,7 +8,7 @@ export async function onAuth(event) {
   const email = event.target.email.value;
   const password = event.target.password.value;
 
-  if ((event.submitter, dataset.auth === 'login')) {
+  if (event.submitter.dataset.auth === 'login') {
     await login(email, password);
   } else {
     await register(name, email, password);
