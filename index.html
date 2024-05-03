@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="./src/js/api/index.mjs"></script>
     <link rel="stylesheet" href="dist/css/index.css" />
     <meta
       description="
@@ -260,19 +261,19 @@
                               </label>
                             </div>
                           </div>
-                        </form>
-                        <div
-                          class="container d-flex justify-content-center mb-3"
-                        >
-                          <button
-                            class="btn btn-attention text-formatting px-5 py-2"
-                            type="submit"
-                            value="submit"
-                            id="login-button"
+                          <div
+                            class="container d-flex justify-content-center mb-3"
                           >
-                            Log in
-                          </button>
-                        </div>
+                            <button
+                              class="btn btn-attention text-formatting px-5 py-2"
+                              type="submit"
+                              value="submit"
+                              id="login-button"
+                            >
+                              Log in
+                            </button>
+                          </div>
+                        </form>
                       </div>
                       <hr />
                       <div
@@ -282,7 +283,6 @@
                         <button
                           class="btn btn-tertiary text-formatting px-3 py-2"
                           type="button"
-                          value=""
                           data-bs-target="#register-modal-toggle"
                           data-bs-toggle="modal"
                         >
@@ -340,6 +340,7 @@
                                   required
                                   pattern="^[\w]+$"
                                   maxlength="20"
+                                  title="Please enter a name under 20 characters"
                                   class="form-control bg-light mb-2"
                                   id="input-user-name"
                                 />
@@ -360,6 +361,7 @@
                                   name="email"
                                   pattern="^[\w\-.]+@stud\.noroff\.no$"
                                   required
+                                  title="Please enter an email containing stud@noroff.no"
                                   class="form-control bg-primary mb-3"
                                   id="register-email"
                               /></label>
@@ -377,25 +379,26 @@
                                   minlength="8"
                                   required
                                   class="form-control bg-primary mb-3"
-                                  title=" Your password must be at least 8 characters long."
+                                  title="Please enter a password with 8 characters or more"
                                   id="register-password"
                                 />
                               </label>
                             </div>
                           </div>
-                        </form>
-                        <div
-                          class="container d-flex justify-content-center mb-3"
-                        >
-                          <button
-                            class="btn btn-attention text-formatting px-5 py-2"
-                            type="submit"
-                            value="submit"
-                            id="register-button"
+                          <div
+                            class="container d-flex justify-content-center mb-3"
                           >
-                            Register
-                          </button>
-                        </div>
+                            <button
+                              class="btn btn-attention text-formatting px-5 py-2"
+                              type="submit"
+                              value="submit"
+                              data-bs-target="#login-modal-toggle"
+                              id="register-button"
+                            >
+                              Register
+                            </button>
+                          </div>
+                        </form>
                       </div>
                       <hr />
                       <div
