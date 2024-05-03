@@ -97,7 +97,8 @@
                           id="add-listing-form"
                           name="authListing"
                           method="post"
-                          class="container"
+                          class="container needs-validation"
+                          novalidate
                         >
                           <div class="form-group row my-3">
                             <div
@@ -225,7 +226,8 @@
                           id="log-in-form"
                           name="auth"
                           method="post"
-                          class="container"
+                          class="container needs-validation"
+                          novalidate
                         >
                           <div class="form-group row my-3">
                             <div
@@ -325,7 +327,8 @@
                           id="register-form"
                           name="authRegister"
                           method="post"
-                          class="container"
+                          class="container needs-validation"
+                          novalidate
                         >
                           <div class="form-group my-3">
                             <div
@@ -341,6 +344,7 @@
                                   required
                                   pattern="^[\w]+$"
                                   maxlength="20"
+                                  minlength="3"
                                   title="Please enter a name under 20 characters"
                                   class="form-control bg-light mb-2"
                                   id="input-user-name"
