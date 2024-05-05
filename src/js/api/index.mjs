@@ -1,11 +1,8 @@
-import {
-  setAuthListener,
-  setRegisterAuthListener,
-} from './ui/listeners/authListener.mjs';
-import { formValidation } from './validation/formValidation.mjs';
-//import { getProfiles } from './profile/getProfiles.mjs';
+import { hideElements } from './ui/visability/showHideToggle.mjs';
+import { toggleButtonsVisibility } from './ui/visability/showHideToggle.mjs';
+import './ui/listeners/login.mjs';
+import './ui/listeners/logout.mjs';
+import './ui/listeners/register.mjs';
 
-setAuthListener();
-setRegisterAuthListener();
-formValidation();
-//getProfiles();
+hideElements();
+toggleButtonsVisibility();
