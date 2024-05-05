@@ -59,7 +59,7 @@
               <li class="nav-item me-4">
                 <a
                   type="button"
-                  class="nav-link text-formatting"
+                  class="nav-link text-formatting toggleHideElement"
                   id="link-post-a-listing"
                   data-bs-target="#add-listing-modal-toggle"
                   data-bs-toggle="modal"
@@ -188,6 +188,7 @@
               <li class="nav-item me-4">
                 <a
                   type="button"
+                  id="login-nav-button"
                   class="nav-link text-formatting"
                   data-bs-target="#login-modal-toggle"
                   data-bs-toggle="modal"
@@ -226,8 +227,7 @@
                           id="log-in-form"
                           name="auth"
                           method="post"
-                          class="container needs-validation"
-                          novalidate
+                          class="container"
                         >
                           <div class="form-group row my-3">
                             <div
@@ -238,8 +238,8 @@
                                 <input
                                   type="email"
                                   name="email"
-                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
                                   required
+                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
                                   class="form-control bg-primary mb-3"
                                   id="login-email"
                               /></label>
@@ -257,7 +257,6 @@
                                   minlength="8"
                                   required
                                   class="form-control bg-primary mb-3"
-                                  title=" Your password must be at least 8 characters long."
                                   id="login-password"
                                 />
                               </label>
@@ -340,14 +339,13 @@
                                 >Username
                                 <input
                                   type="text"
-                                  name="name"
+                                  name="username"
                                   required
                                   pattern="^[\w]+$"
                                   maxlength="20"
-                                  minlength="3"
-                                  title="Please enter a name under 20 characters"
+                                  title="Please enter a name with less than 20 characters"
                                   class="form-control bg-light mb-2"
-                                  id="input-user-name"
+                                  id="register-username"
                                 />
                                 <small class=""></small>
                               </label>
@@ -426,7 +424,19 @@
                 </div>
               </li>
               <li class="nav-item me-4">
-                <a class="nav-link text-formatting" href="/profile/"
+                <a
+                  id="logout-nav-button"
+                  type="button"
+                  class="nav-link text-formatting toggleHideElement"
+                  href="#"
+                  >Log out
+                </a>
+              </li>
+
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-formatting toggleHideElement"
+                  href="/profile/"
                   ><i class="fa-regular fa-user"></i
                 ></a>
               </li>

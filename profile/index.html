@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="../src/js/api/index.mjs"></script>
     <link rel="stylesheet" href="../dist/css/index.css" />
     <meta description="Your personal profile on Last Bid Auction. " />
 
@@ -45,22 +46,145 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto text-formatting">
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item me-4">
-                <a class="nav-link" href="/Listed-items/">Listed Items</a>
-              </li>
-              <li class="nav-item me-4">
-                <a
-                  class="nav-link disabled"
-                  id="link-post-a-listing"
-                  aria-disabled="true"
-                  href="#"
-                  >Post a Listing</a
+                <a class="nav-link text-formatting" href="/Listed-items/"
+                  >Listed Items</a
                 >
               </li>
               <li class="nav-item me-4">
                 <a
                   type="button"
+                  class="nav-link text-formatting toggleHideElement"
+                  id="link-post-a-listing"
+                  data-bs-target="#add-listing-modal-toggle"
+                  data-bs-toggle="modal"
+                  href="#"
+                  >Post a Listing</a
+                >
+                <div
+                  class="modal fade"
+                  id="add-listing-modal-toggle"
+                  aria-hidden="true"
+                  aria-labelledby="add-listing-modal-toggle-label"
+                  tabindex="-1"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 container bg-primary">
+                      <div class="modal-header border-0 row">
+                        <button
+                          type="button"
+                          class="btn-close row"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                        <div>
+                          <h1
+                            class="main-header text-formatting text-center h2 mt-3 mb-1"
+                            id="add-listing-modal-toggle-label"
+                          >
+                            Post Listing
+                          </h1>
+                          <hr />
+                        </div>
+                      </div>
+                      <div class="modal-body border-0">
+                        <form
+                          id="add-listing-form"
+                          name="authListing"
+                          method="post"
+                          class="container needs-validation"
+                          novalidate
+                        >
+                          <div class="form-group row my-3">
+                            <div
+                              class="d-flex justify-content-center align-center"
+                            >
+                              <label
+                                for="listing-title"
+                                class="text-formatting"
+                              >
+                                Title
+                                <input
+                                  type="text"
+                                  name="listing-title"
+                                  required
+                                  class="form-control bg-primary mb-3"
+                                  id="listing-title"
+                                  data-toggle="tooltip"
+                                  data-placement="top"
+                                  title="Please enter the title of you post"
+                              /></label>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center"
+                            >
+                              <label for="listing-tags" class="text-formatting"
+                                >Tags
+                                <input
+                                  type="text"
+                                  name="listing-tags"
+                                  class="form-control bg-primary mb-3"
+                                  id="listing-tags"
+                                />
+                              </label>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center"
+                            >
+                              <label for="listing-url" class="text-formatting"
+                                >Media
+                                <input
+                                  type="url"
+                                  name="listing-url"
+                                  class="form-control bg-primary mb-3"
+                                  id="listing-url"
+                                />
+                              </label>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center"
+                            >
+                              <label
+                                for="listing-description"
+                                class="text-formatting"
+                                required
+                                >Description
+                                <textarea
+                                  type="text-area"
+                                  name="listing-description"
+                                  class="form-control bg-primary mb-3"
+                                  id="listing-description"
+                                  data-toggle="tooltip"
+                                  data-placement="top"
+                                  title="Please enter a description for your listing."
+                                ></textarea>
+                              </label>
+                            </div>
+                          </div>
+                          <div
+                            class="container d-flex justify-content-center pb-3 mb-5"
+                          >
+                            <button
+                              class="btn btn-attention text-formatting px-5 py-2"
+                              type="submit"
+                              value="submit"
+                              id="add-listing"
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item me-4">
+                <a
+                  type="button"
+                  id="login-nav-button"
                   class="nav-link text-formatting"
                   data-bs-target="#login-modal-toggle"
                   data-bs-toggle="modal"
@@ -99,8 +223,7 @@
                           id="log-in-form"
                           name="auth"
                           method="post"
-                          class="container needs-validation"
-                          novalidate
+                          class="container"
                         >
                           <div class="form-group row my-3">
                             <div
@@ -111,8 +234,8 @@
                                 <input
                                   type="email"
                                   name="email"
-                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
                                   required
+                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
                                   class="form-control bg-primary mb-3"
                                   id="login-email"
                               /></label>
@@ -130,7 +253,6 @@
                                   minlength="8"
                                   required
                                   class="form-control bg-primary mb-3"
-                                  title=" Your password must be at least 8 characters long."
                                   id="login-password"
                                 />
                               </label>
@@ -159,7 +281,6 @@
                         <button
                           class="btn btn-tertiary text-formatting px-3 py-2"
                           type="button"
-                          value=""
                           data-bs-target="#register-modal-toggle"
                           data-bs-toggle="modal"
                         >
@@ -214,12 +335,14 @@
                                 >Username
                                 <input
                                   type="text"
-                                  name="name"
+                                  name="username"
                                   required
                                   pattern="^[\w]+$"
                                   maxlength="20"
+                                  minlength="3"
+                                  title="Please enter a name under 20 characters"
                                   class="form-control bg-light mb-2"
-                                  id="input-user-name"
+                                  id="register-username"
                                 />
                                 <small class=""></small>
                               </label>
@@ -238,6 +361,7 @@
                                   name="email"
                                   pattern="^[\w\-.]+@stud\.noroff\.no$"
                                   required
+                                  title="Please enter an email containing stud@noroff.no"
                                   class="form-control bg-primary mb-3"
                                   id="register-email"
                               /></label>
@@ -255,26 +379,27 @@
                                   minlength="8"
                                   required
                                   class="form-control bg-primary mb-3"
-                                  title=" Your password must be at least 8 characters long."
+                                  title="Please enter a password with 8 characters or more"
                                   id="register-password"
                                 />
                               </label>
                             </div>
                           </div>
-                        </form>
-                        <div
-                          class="container d-flex justify-content-center mb-3"
-                        >
-                          <button
-                            class="btn btn-attention text-formatting px-5 py-2"
-                            type="submit"
-                            value="submit"
-                            id="register-button"
-                            data-auth="register"
+                          <div
+                            class="container d-flex justify-content-center mb-3"
                           >
-                            Register
-                          </button>
-                        </div>
+                            <button
+                              class="btn btn-attention text-formatting px-5 py-2"
+                              type="submit"
+                              value="submit"
+                              data-bs-target="#login-modal-toggle"
+                              id="register-button"
+                              data-auth="register"
+                            >
+                              Register
+                            </button>
+                          </div>
+                        </form>
                       </div>
                       <hr />
                       <div
@@ -296,8 +421,20 @@
                 </div>
               </li>
               <li class="nav-item me-4">
-                <a class="nav-link" href="#"
-                  ><i class="fa-regular fa-user fs-4"></i
+                <a
+                  id="logout-nav-button"
+                  type="button"
+                  class="nav-link text-formatting toggleHideElement"
+                  href="#"
+                  >Log out
+                </a>
+              </li>
+
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-formatting toggleHideElement"
+                  href="/profile/"
+                  ><i class="fa-regular fa-user"></i
                 ></a>
               </li>
             </ul>
