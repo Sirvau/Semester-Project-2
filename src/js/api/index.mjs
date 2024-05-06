@@ -4,7 +4,9 @@ import './ui/listeners/login.mjs';
 import './ui/listeners/logout.mjs';
 import './ui/listeners/register.mjs';
 import { getListings } from './listings/getListings.mjs';
+import { createListingListener } from './ui/listeners/createListing.mjs';
 
 hideElements();
 toggleButtonsVisibility();
 getListings();
+createListingListener();
