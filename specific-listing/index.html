@@ -15,6 +15,16 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script defer type="module" src="../src/js/api/index.mjs"></script>
+    <script
+      defer
+      type="module"
+      src="../src/js/api/routes/listingSpecific.mjs"
+    ></script>
+    <script
+      defer
+      type="module"
+      src="../src/js/api/listings/specificListing.mjs"
+    ></script>
     <link rel="stylesheet" href="../dist/css/index.css" />
     <meta description="Your personal profile on Last Bid Auction. " />
 
@@ -472,67 +482,29 @@
     </header>
     <main class="container col-sm-11 mb-5">
       <section
+        id="single-listing-main-container"
         class="container d-lg-flex justify-content-md-center justify-content-lg-between align-items-md-top my-5 py-5"
       >
-        <div class="container col-xxl-5">
-          <a href="#" class="d-block mb-4 ratio ratio ratio-4x3">
-            <img
-              class="img-fluid"
-              src="https://source.unsplash.com/EUfxH-pze7s/800x700"
-              alt=""
-            />
-          </a>
-          <div class="row d-flex justify-content-between">
-            <div class="col-6 col-md-4 col-lg-3">
-              <a href="#" class="d-block mb-4">
-                <img
-                  class="img-fluid img-thumbnail"
-                  src="https://source.unsplash.com/EUfxH-pze7s/400x300"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <a href="#" class="d-block mb-4">
-                <img
-                  class="img-fluid img-thumbnail"
-                  src="https://source.unsplash.com/EUfxH-pze7s/400x300"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <a href="#" class="d-block mb-4">
-                <img
-                  class="img-fluid img-thumbnail"
-                  src="https://source.unsplash.com/EUfxH-pze7s/400x300"
-                  alt=""
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="container col-xxl-5 border rounded-bottom-3">
+        <div id="listing-gallery-container" class="container col-xxl-5"></div>
+        <div
+          id="listing-description-container"
+          class="container col-xxl-5 border rounded-bottom-3"
+        >
           <h1
             id="specific-title"
             class="main-header h2 text-center text-formatting mt-5 mb-4"
-          >
-            Item title
-          </h1>
-          <p id="specific-description" class="container body-text">
-            Item description... Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Sagittis id consectetur purus ut. Aenean
-            pharetra magna ac placerat vestibulum lectus mauris ultrices eros.
-          </p>
-          <div class="text-center">
-            <p class="body-text text-formatting fs-5 mt-5">Current bid:</p>
+          ></h1>
+          <p id="specific-description" class="container body-text"></p>
+          <div id="current-bid-container" class="text-center">
             <p
-              id="specific-current-bid"
+              id="current-bid-text"
+              class="body-text text-formatting fs-5 mt-5"
+            ></p>
+            <p
+              id="current-bid-amount"
               class="body-text text-formatting fw-bold fs-5"
-            >
-              000 $
-            </p>
+            ></p>
+            <small id="ends-at" class="d-block"></small>
 
             <a
               href="#"
