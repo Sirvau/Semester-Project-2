@@ -1,4 +1,4 @@
-import { API_BASE, API_LISTINGS, API_SINGLE_LISTING } from '../constants.mjs';
+import { API_BASE, API_LISTINGS } from '../constants.mjs';
 
 // Get All Listings
 export async function getListings() {
@@ -17,27 +17,5 @@ export async function getListings() {
     }
   } catch {
     throw new Error(response.statusText);
-  }
-}
-
-//Get Single Listing By ID
-export async function getSingleListing(id) {
-  try {
-    const response = await fetch(API_BASE + API_SINGLE_LISTING, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      const singleListingData = await response.json();
-      console.log(singleListingData);
-      return await singleListingData;
-    }
-  } catch {
-    if (!id) {
-      throw new Error('Get requires a postID');
-    }
   }
 }
