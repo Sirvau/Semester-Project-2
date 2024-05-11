@@ -1,19 +1,11 @@
-import { API_BASE, API_LISTINGS } from '../constants.mjs';
+import { API_BASE, API_LISTINGS, ID } from '../constants.mjs';
 
-//Getting ID From Querystring
-function getListingIdFromQuery() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  return id;
-}
-
-const listingId = getListingIdFromQuery();
-const listingSpecificURL = `${API_BASE}${API_LISTINGS}/${listingId}`;
+const listingSpecificURL = `${API_BASE}${API_LISTINGS}/${ID}`;
 
 //---------------------------------------------------Function for displaying Specific Listing ---------------------------------------
 
 export async function displaySpecificListing() {
-  if (!listingId) {
+  if (!ID) {
     throw new Error('Post ID is missing');
   }
 
