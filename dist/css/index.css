@@ -12301,4 +12301,13 @@ nav .navbar-toggler:focus {
   box-shadow: none !important;
 }
 
+.listingCardImg {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.listingCard {
+  max-height: 350px;
+}
+
 /*# sourceMappingURL=index.css.map */

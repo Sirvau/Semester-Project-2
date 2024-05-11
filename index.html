@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script defer type="module" src="./src/js/api/index.mjs"></script>
     <link rel="stylesheet" href="dist/css/index.css" />
+
     <meta
       description="
     Welcome to Last Bid Auction Site. The best auction for unique quality items.
@@ -94,7 +95,7 @@
                       </div>
                       <div class="modal-body border-0">
                         <form
-                          id="add-listing-form"
+                          id="create-listing-form"
                           name="authListing"
                           method="post"
                           class="container needs-validation"
@@ -119,6 +120,19 @@
                                   data-placement="top"
                                   title="Please enter the title of you post"
                               /></label>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center"
+                            >
+                              <label for="date" class="text-formatting"
+                                >End date
+                                <input
+                                  type="date"
+                                  class="form-control bg-primary mb-3"
+                                  id="listing-date"
+                                  name="listing-date"
+                                />
+                              </label>
                             </div>
                             <div
                               class="d-flex justify-content-center align-center"
