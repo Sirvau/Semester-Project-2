@@ -1,9 +1,10 @@
 import { API_BASE, API_PROFILES, API_KEY } from '../constants.mjs';
 import { load } from '../storage/load.mjs';
 
-//Fetch profiles from API
-export async function getProfiles() {
-  const response = await fetch(API_BASE + API_PROFILES, {
+export async function getSingleProfile() {
+  const profile = load('profile');
+
+  const response = await fetch(API_BASE + API_PROFILES + `/${profile.name}`, {
     headers: {
       Authorization: `Bearer ${load('token')}`,
       'X-Noroff-API-Key': API_KEY,
@@ -13,6 +14,6 @@ export async function getProfiles() {
     console.log(response);
     return await response.json();
   }
-  console.log(Error);
-  throw new Error('Could not fetch profiles from API');
+  console.log(response);
+  throw new Error('Could not fetch single profile');
 }
