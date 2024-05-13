@@ -96,11 +96,10 @@
                       </div>
                       <div class="modal-body border-0">
                         <form
-                          id="create-listing-form"
+                          id="nav-create-listing-form"
                           name="authListing"
                           method="post"
                           class="container needs-validation"
-                          novalidate
                         >
                           <div class="form-group row my-3">
                             <div
@@ -116,11 +115,22 @@
                                   name="listing-title"
                                   required
                                   class="form-control bg-primary mb-3"
-                                  id="listing-title"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Please enter the title of you post"
                               /></label>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center"
+                            >
+                              <label for="date" class="text-formatting"
+                                >End date
+                                <input
+                                  type="date"
+                                  class="form-control bg-primary mb-3"
+                                  name="listing-date"
+                                />
+                              </label>
                             </div>
                             <div
                               class="d-flex justify-content-center align-center"
@@ -131,7 +141,6 @@
                                   type="text"
                                   name="listing-tags"
                                   class="form-control bg-primary mb-3"
-                                  id="listing-tags"
                                 />
                               </label>
                             </div>
@@ -144,7 +153,6 @@
                                   type="url"
                                   name="listing-url"
                                   class="form-control bg-primary mb-3"
-                                  id="listing-url"
                                 />
                               </label>
                             </div>
@@ -160,7 +168,6 @@
                                   type="text-area"
                                   name="listing-description"
                                   class="form-control bg-primary mb-3"
-                                  id="listing-description"
                                   data-toggle="tooltip"
                                   data-placement="top"
                                   title="Please enter a description for your listing."
@@ -573,17 +580,17 @@
           <p class="body-text text-formatting mt-4">Total credit</p>
           <a
             href="#"
-            id="link-post-a-listing"
-            data-bs-target="#add-listing-modal-toggle"
+            id="profile-link-post-a-listing"
+            data-bs-target="#profile-add-listing-modal-toggle"
             data-bs-toggle="modal"
             class="btn btn-secondary text-formatting px-5 mt-5"
             >Post a listing</a
           >
           <div
             class="modal fade"
-            id="add-listing-modal-toggle"
+            id="profile-add-listing-modal-toggle"
             aria-hidden="true"
-            aria-labelledby="add-listing-modal-toggle-label"
+            aria-labelledby="profile-add-listing-modal-toggle-label"
             tabindex="-1"
           >
             <div class="modal-dialog modal-dialog-centered">
@@ -622,7 +629,6 @@
                             name="listing-title"
                             required
                             class="form-control bg-primary mb-3"
-                            id="listing-title"
                             data-toggle="tooltip"
                             data-placement="top"
                             title="Please enter the title of you post"
@@ -634,7 +640,6 @@
                           <input
                             type="date"
                             class="form-control bg-primary mb-3"
-                            id="listing-date"
                             name="listing-date"
                           />
                         </label>
@@ -646,7 +651,6 @@
                             type="text"
                             name="listing-tags"
                             class="form-control bg-primary mb-3"
-                            id="listing-tags"
                           />
                         </label>
                       </div>
@@ -657,7 +661,6 @@
                             type="url"
                             name="listing-url"
                             class="form-control bg-primary mb-3"
-                            id="listing-url"
                           />
                         </label>
                       </div>
@@ -671,7 +674,6 @@
                             type="text-area"
                             name="listing-description"
                             class="form-control bg-primary mb-3"
-                            id="listing-description"
                             data-toggle="tooltip"
                             data-placement="top"
                             title="Please enter a description for your listing."
@@ -679,19 +681,21 @@
                         </label>
                       </div>
                     </div>
-                  </form>
-                  <div
-                    class="container d-flex justify-content-center pb-3 mb-5"
-                  >
-                    <button
-                      class="btn btn-attention text-formatting px-5 py-2"
-                      type="submit"
-                      value="submit"
-                      id="listing-button"
+                    <div
+                      class="container d-flex justify-content-center pb-3 mb-5"
                     >
-                      Post listing
-                    </button>
-                  </div>
+                      <button
+                        class="btn btn-attention text-formatting px-5 py-2"
+                        type="submit"
+                        value="submit"
+                        id="profile-listing-button"
+                        data-bs-target="#profile-add-listing-modal-toggle"
+                        data-bs-toggle="modal"
+                      >
+                        Post listing
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
