@@ -4,28 +4,44 @@ export async function displayProfile() {
   try {
     const profile = await getSingleProfile();
 
-    const avatarImg = document.createElement('img');
-    avatarImg.src = `${profile.data.avatar.url}`;
-    avatarImg.alt = `${profile.data.avatar.alt}`;
-    avatarImg.classList.add(
-      'rounded-circle',
-      'img-thumbnail',
-      'border-0',
-      'mx-auto',
-      'd-block',
-      'avatar-img',
-    );
-
     const avatarImgContainer = document.getElementById(
       'avatar-image-container',
     );
-    avatarImgContainer.classList.add(
-      'd-flex',
-      'justify-content-center',
-      'align-center',
+    const avatarModalImgContainer = document.getElementById(
+      'edit-avatar-modal-img-container',
     );
 
-    avatarImgContainer.appendChild(avatarImg);
+    if (avatarImgContainer) {
+      const avatarImg = document.createElement('img');
+      avatarImg.src = `${profile.data.avatar.url}`;
+      avatarImg.alt = `${profile.data.avatar.alt}`;
+      avatarImg.classList.add(
+        'rounded-circle',
+        'img-thumbnail',
+        'border-0',
+        'mx-auto',
+        'd-block',
+        'avatar-img',
+      );
+
+      avatarImgContainer.appendChild(avatarImg);
+    }
+
+    if (avatarModalImgContainer) {
+      const avatarModalImg = document.createElement('img');
+      avatarModalImg.src = `${profile.data.avatar.url}`;
+      avatarModalImg.alt = `${profile.data.avatar.alt}`;
+      avatarModalImg.classList.add(
+        'rounded-circle',
+        'img-thumbnail',
+        'border-0',
+        'mx-auto',
+        'd-block',
+        'avatar-img',
+      );
+
+      avatarModalImgContainer.appendChild(avatarModalImg);
+    }
 
     const userName = document.getElementById('user-name');
     userName.textContent = `${profile.data.name}`;
