@@ -1,4 +1,5 @@
 import { getSingleProfile } from './getProfiles.mjs';
+import { editAvatarListener } from '../ui/listeners/editAvatar.mjs';
 
 export async function displayProfile() {
   try {
@@ -54,3 +55,4 @@ export async function displayProfile() {
 }
 
 displayProfile();
+editAvatarListener();

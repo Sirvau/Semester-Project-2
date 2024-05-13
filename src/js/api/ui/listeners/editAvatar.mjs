@@ -1,7 +1,7 @@
 import { editAvatar } from '../../profile/editAvatar.mjs';
 
 export function editAvatarListener() {
-  const form = document.querySelector('form#edit-avatar-form');
+  const form = document.getElementById('edit-avatar-form');
 
   try {
     if (form) {
@@ -10,10 +10,18 @@ export function editAvatarListener() {
 
         try {
           const formData = new FormData(form);
-          const avatarData = formData.get('avatar');
+
+          const avatarInput = formData.get('avatar');
+
+          const avatarData = {
+            avatar: {
+              url: avatarInput,
+              alt: '',
+            },
+          };
 
           await editAvatar(avatarData);
-          window.location.reload();
+          window.location.pathname = '/profile/';
         } catch (error) {
           console.error('Error editing avatar', error);
         }
