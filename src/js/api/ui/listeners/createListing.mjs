@@ -1,22 +1,53 @@
 import { createListing } from '../../listings/createListing.mjs';
 
 export function createListingListener() {
-  const form = document.querySelector('#create-listing-form');
+  const navForm = document.querySelector('form#nav-create-listing-form');
+  const profileForm = document.querySelector('form#create-listing-form');
 
-  if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-      const listing = {
-        title: formData.get('listing-title'),
-        description: formData.get('listing-description'),
-        tags: formData.get('listing-tags').split(','),
-        media: [{ url: formData.get('listing-url') }],
-        endsAt: formData.get('listing-date'),
-      };
-      console.log(listing);
-      createListing(listing);
-    });
+  try {
+    if (navForm) {
+      navForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const navForm = event.target;
+        const formData = new FormData(navForm);
+        const listing = {
+          title: formData.get('listing-title'),
+          description: formData.get('listing-description'),
+          tags: formData.get('listing-tags').split(','),
+          media: [{ url: formData.get('listing-url') }],
+          endsAt: formData.get('listing-date'),
+        };
+        console.log(listing);
+        try {
+          await createListing(listing);
+          window.location.href = '/listed-items/';
+        } catch (error) {
+          console.log('Error creating new listing:', error);
+        }
+      });
+    }
+    if (profileForm) {
+      profileForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const profileForm = event.target;
+        const formData = new FormData(profileForm);
+        const listing = {
+          title: formData.get('listing-title'),
+          description: formData.get('listing-description'),
+          tags: formData.get('listing-tags').split(','),
+          media: [{ url: formData.get('listing-url') }],
+          endsAt: formData.get('listing-date'),
+        };
+        console.log(listing);
+        try {
+          await createListing(listing);
+          window.location.href = '/listed-items/';
+        } catch (error) {
+          console.log('Error creating new listing:', error);
+        }
+      });
+    }
+  } catch (error) {
+    console.log('Error adding submit listener:', error);
   }
 }
