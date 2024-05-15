@@ -239,37 +239,40 @@
                           method="post"
                           class="container"
                         >
-                          <div class="form-group row my-3">
+                          <div
+                            class="form-group row my-3 justify-content-center mx-5 px-4"
+                          >
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="login-email" class="text-formatting">
                                 Email
-                                <input
-                                  type="email"
-                                  name="email"
-                                  required
-                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
-                                  class="form-control bg-primary mb-3"
-                                  id="login-email"
-                              /></label>
+                              </label>
+                              <input
+                                type="email"
+                                name="email"
+                                required
+                                pattern="^[\w\-.]+@stud\.noroff\.no$"
+                                class="form-control bg-primary mb-3"
+                                id="login-email"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="login-password"
                                 class="text-formatting"
-                                >Password
-                                <input
-                                  type="password"
-                                  name="password"
-                                  minlength="8"
-                                  required
-                                  class="form-control bg-primary mb-3"
-                                  id="login-password"
-                                />
-                              </label>
+                                >Password</label
+                              >
+                              <input
+                                type="password"
+                                name="password"
+                                minlength="8"
+                                required
+                                class="form-control bg-primary mb-3"
+                                id="login-password"
+                              />
                             </div>
                           </div>
                           <div
@@ -293,7 +296,7 @@
                       >
                         <p class="me-3">New user?</p>
                         <button
-                          class="btn btn-tertiary text-formatting px-3 py-2"
+                          class="btn btn-outline-tertiary text-formatting px-3 py-2 text-dark"
                           type="button"
                           data-bs-target="#register-modal-toggle"
                           data-bs-toggle="modal"
@@ -339,63 +342,64 @@
                           class="container needs-validation"
                           novalidate
                         >
-                          <div class="form-group my-3">
+                          <div class="form-group my-3 mx-5 px-5">
                             <div
-                              class="d-flex col justify-content-center align-center"
+                              class="d-flex col justify-content-center align-center row"
                             >
                               <label
                                 for="username"
                                 class="col-form-label text-formatting"
                                 >Username
-                                <input
-                                  type="text"
-                                  name="username"
-                                  required
-                                  pattern="^[\w]+$"
-                                  maxlength="20"
-                                  title="Please enter a name with less than 20 characters"
-                                  class="form-control bg-light mb-2"
-                                  id="register-username"
-                                />
-                                <small class=""></small>
                               </label>
+                              <input
+                                type="text"
+                                name="username"
+                                required
+                                pattern="^[\w]+$"
+                                maxlength="20"
+                                title="Please enter a name with less than 20 characters"
+                                class="form-control bg-light mb-3"
+                                id="register-username"
+                              />
+                              <small class=""></small>
                             </div>
 
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="register-email"
                                 class="text-formatting"
                               >
-                                Email
-                                <input
-                                  type="email"
-                                  name="email"
-                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
-                                  required
-                                  title="Please enter an email containing stud@noroff.no"
-                                  class="form-control bg-primary mb-3"
-                                  id="register-email"
-                              /></label>
+                                Email</label
+                              >
+                              <input
+                                type="email"
+                                name="email"
+                                pattern="^[\w\-.]+@stud\.noroff\.no$"
+                                required
+                                title="Please enter an email containing stud@noroff.no"
+                                class="form-control bg-primary mb-3"
+                                id="register-email"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="register-password"
                                 class="text-formatting"
                                 >Password
-                                <input
-                                  type="password"
-                                  name="password"
-                                  minlength="8"
-                                  required
-                                  class="form-control bg-primary mb-3"
-                                  title="Please enter a password with 8 characters or more"
-                                  id="register-password"
-                                />
                               </label>
+                              <input
+                                type="password"
+                                name="password"
+                                minlength="8"
+                                required
+                                class="form-control bg-primary mb-3"
+                                title="Please enter a password with 8 characters or more"
+                                id="register-password"
+                              />
                             </div>
                           </div>
                           <div
@@ -420,7 +424,7 @@
                       >
                         <p class="me-3">Already an account?</p>
                         <button
-                          class="btn btn-tertiary text-formatting px-3 py-2"
+                          class="btn btn-outline-tertiary text-formatting text-dark px-3 py-2"
                           type="button"
                           value=""
                           data-bs-target="#login-modal-toggle"
