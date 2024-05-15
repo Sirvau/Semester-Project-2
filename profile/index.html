@@ -100,79 +100,81 @@
                           name="authListing"
                           method="post"
                           class="container needs-validation"
+                          novalidate
                         >
-                          <div class="form-group row my-3">
+                          <div class="form-group mx-5 px-4 my-3">
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="listing-title"
                                 class="text-formatting"
                               >
-                                Title
-                                <input
-                                  type="text"
-                                  name="listing-title"
-                                  required
-                                  class="form-control bg-primary mb-3"
-                                  data-toggle="tooltip"
-                                  data-placement="top"
-                                  title="Please enter the title of you post"
-                              /></label>
+                                Title</label
+                              >
+                              <input
+                                type="text"
+                                name="listing-title"
+                                required
+                                class="form-control bg-primary mb-3"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Please enter the title of you post"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="date" class="text-formatting"
                                 >End date
-                                <input
-                                  type="date"
-                                  class="form-control bg-primary mb-3"
-                                  name="listing-date"
-                                />
                               </label>
+                              <input
+                                type="date"
+                                class="form-control bg-primary mb-3"
+                                name="listing-date"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="listing-tags" class="text-formatting"
                                 >Tags
-                                <input
-                                  type="text"
-                                  name="listing-tags"
-                                  class="form-control bg-primary mb-3"
-                                />
                               </label>
+                              <input
+                                type="text"
+                                name="listing-tags"
+                                class="form-control bg-primary mb-3"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="listing-url" class="text-formatting"
                                 >Media
-                                <input
-                                  type="url"
-                                  name="listing-url"
-                                  class="form-control bg-primary mb-3"
-                                />
                               </label>
+                              <input
+                                type="url"
+                                name="listing-url"
+                                class="form-control bg-primary mb-3"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="listing-description"
-                                class="text-formatting"
-                                required
+                                class="text-formatting mt-4"
                                 >Description
-                                <textarea
-                                  type="text-area"
-                                  name="listing-description"
-                                  class="form-control bg-primary mb-3"
-                                  data-toggle="tooltip"
-                                  data-placement="top"
-                                  title="Please enter a description for your listing."
-                                ></textarea>
                               </label>
+                              <textarea
+                                type="textarea"
+                                name="listing-description"
+                                class="form-control bg-primary mb-3 pb-5"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Please enter a description for your listing."
+                                required
+                              ></textarea>
                             </div>
                           </div>
                           <div
@@ -616,65 +618,76 @@
                     class="container needs-validation"
                     novalidate
                   >
-                    <div class="form-group row my-3">
-                      <div class="d-flex justify-content-center align-center">
+                    <div class="form-group mx-5 px-4 my-3">
+                      <div
+                        class="d-flex justify-content-center align-center row"
+                      >
                         <label for="listing-title" class="text-formatting">
-                          Title
-                          <input
-                            type="text"
-                            name="listing-title"
-                            required
-                            class="form-control bg-primary mb-3"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Please enter the title of you post"
-                        /></label>
+                          Title</label
+                        >
+                        <input
+                          type="text"
+                          name="listing-title"
+                          required
+                          class="form-control bg-primary mb-3"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Please enter the title of you post"
+                        />
                       </div>
-                      <div class="d-flex justify-content-center align-center">
+                      <div
+                        class="d-flex justify-content-center align-center row"
+                      >
                         <label for="date" class="text-formatting"
                           >End date
-                          <input
-                            type="date"
-                            class="form-control bg-primary mb-3"
-                            name="listing-date"
-                          />
                         </label>
+                        <input
+                          type="date"
+                          class="form-control bg-primary mb-3"
+                          name="listing-date"
+                        />
                       </div>
-                      <div class="d-flex justify-content-center align-center">
+                      <div
+                        class="d-flex justify-content-center align-center row"
+                      >
                         <label for="listing-tags" class="text-formatting"
                           >Tags
-                          <input
-                            type="text"
-                            name="listing-tags"
-                            class="form-control bg-primary mb-3"
-                          />
                         </label>
+                        <input
+                          type="text"
+                          name="listing-tags"
+                          class="form-control bg-primary mb-3"
+                        />
                       </div>
-                      <div class="d-flex justify-content-center align-center">
+                      <div
+                        class="d-flex justify-content-center align-center row"
+                      >
                         <label for="listing-url" class="text-formatting"
                           >Media
-                          <input
-                            type="url"
-                            name="listing-url"
-                            class="form-control bg-primary mb-3"
-                          />
                         </label>
+                        <input
+                          type="url"
+                          name="listing-url"
+                          class="form-control bg-primary mb-3"
+                        />
                       </div>
-                      <div class="d-flex justify-content-center align-center">
+                      <div
+                        class="d-flex justify-content-center align-center row"
+                      >
                         <label
                           for="listing-description"
-                          class="text-formatting"
-                          required
+                          class="text-formatting mt-4"
                           >Description
-                          <textarea
-                            type="text-area"
-                            name="listing-description"
-                            class="form-control bg-primary mb-3"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Please enter a description for your listing."
-                          ></textarea>
                         </label>
+                        <textarea
+                          type="textarea"
+                          name="listing-description"
+                          class="form-control bg-primary mb-3 pb-5"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Please enter a description for your listing."
+                          required
+                        ></textarea>
                       </div>
                     </div>
                     <div
@@ -684,11 +697,9 @@
                         class="btn btn-attention text-formatting px-5 py-2"
                         type="submit"
                         value="submit"
-                        id="profile-listing-button"
-                        data-bs-target="#profile-add-listing-modal-toggle"
-                        data-bs-toggle="modal"
+                        id="add-listing"
                       >
-                        Post listing
+                        Submit
                       </button>
                     </div>
                   </form>
