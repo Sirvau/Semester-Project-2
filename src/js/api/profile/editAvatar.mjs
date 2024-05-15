@@ -20,7 +20,6 @@ export async function editAvatar(avatarData) {
     const result = await response.json();
 
     if (response.ok) {
-      console.log(avatarData);
       return await result;
     }
   } catch (error) {
