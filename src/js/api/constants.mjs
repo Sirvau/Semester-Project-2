@@ -9,7 +9,7 @@ export const API_SELLER = '_seller=true';
 export const API_LISTINGS = '/auction/listings';
 export const API_ACTIVE = '_active=true';
 export const API_SINGLE_LISTING = '/auction/listings/${ID}';
-export const API_SEARCH_LISTING = '/auction/listings/search?q=';
+export const API_SEARCH_LISTING = '/auction/listings/search';
 export const API_BIDS = '/bids';
 
 const queryString = document.location.search;
