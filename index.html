@@ -99,80 +99,81 @@
                           name="authListing"
                           method="post"
                           class="container needs-validation"
+                          novalidate
                         >
-                          <div class="form-group row my-3">
+                          <div class="form-group mx-5 px-4 my-3">
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="listing-title"
                                 class="text-formatting"
                               >
-                                Title
-                                <input
-                                  type="text"
-                                  name="listing-title"
-                                  required
-                                  class="form-control bg-primary mb-3"
-                                  data-toggle="tooltip"
-                                  data-placement="top"
-                                  title="Please enter the title of you post"
-                              /></label>
+                                Title</label
+                              >
+                              <input
+                                type="text"
+                                name="listing-title"
+                                required
+                                class="form-control bg-primary mb-3"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Please enter the title of you post"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="date" class="text-formatting"
                                 >End date
-                                <input
-                                  type="date"
-                                  class="form-control bg-primary mb-3"
-                                  name="listing-date"
-                                />
                               </label>
+                              <input
+                                type="date"
+                                class="form-control bg-primary mb-3"
+                                name="listing-date"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="listing-tags" class="text-formatting"
                                 >Tags
-                                <input
-                                  type="text"
-                                  name="listing-tags"
-                                  class="form-control bg-primary mb-3"
-                                />
                               </label>
+                              <input
+                                type="text"
+                                name="listing-tags"
+                                class="form-control bg-primary mb-3"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="listing-url" class="text-formatting"
                                 >Media
-                                <input
-                                  type="url"
-                                  name="listing-url"
-                                  class="form-control bg-primary mb-3"
-                                />
                               </label>
+                              <input
+                                type="url"
+                                name="listing-url"
+                                class="form-control bg-primary mb-3"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="listing-description"
-                                class="text-formatting"
-                                required
+                                class="text-formatting mt-4"
                                 >Description
-                                <textarea
-                                  type="text-area"
-                                  name="listing-description"
-                                  class="form-control bg-primary mb-3"
-                                  id="listing-description"
-                                  data-toggle="tooltip"
-                                  data-placement="top"
-                                  title="Please enter a description for your listing."
-                                ></textarea>
                               </label>
+                              <textarea
+                                type="textarea"
+                                name="listing-description"
+                                class="form-control bg-primary mb-3 pb-5"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Please enter a description for your listing."
+                                required
+                              ></textarea>
                             </div>
                           </div>
                           <div
@@ -238,37 +239,40 @@
                           method="post"
                           class="container"
                         >
-                          <div class="form-group row my-3">
+                          <div
+                            class="form-group row my-3 justify-content-center mx-5 px-4"
+                          >
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label for="login-email" class="text-formatting">
                                 Email
-                                <input
-                                  type="email"
-                                  name="email"
-                                  required
-                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
-                                  class="form-control bg-primary mb-3"
-                                  id="login-email"
-                              /></label>
+                              </label>
+                              <input
+                                type="email"
+                                name="email"
+                                required
+                                pattern="^[\w\-.]+@stud\.noroff\.no$"
+                                class="form-control bg-primary mb-3"
+                                id="login-email"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="login-password"
                                 class="text-formatting"
-                                >Password
-                                <input
-                                  type="password"
-                                  name="password"
-                                  minlength="8"
-                                  required
-                                  class="form-control bg-primary mb-3"
-                                  id="login-password"
-                                />
-                              </label>
+                                >Password</label
+                              >
+                              <input
+                                type="password"
+                                name="password"
+                                minlength="8"
+                                required
+                                class="form-control bg-primary mb-3"
+                                id="login-password"
+                              />
                             </div>
                           </div>
                           <div
@@ -292,7 +296,7 @@
                       >
                         <p class="me-3">New user?</p>
                         <button
-                          class="btn btn-tertiary text-formatting px-3 py-2"
+                          class="btn btn-outline-tertiary text-formatting px-3 py-2 text-dark"
                           type="button"
                           data-bs-target="#register-modal-toggle"
                           data-bs-toggle="modal"
@@ -338,63 +342,64 @@
                           class="container needs-validation"
                           novalidate
                         >
-                          <div class="form-group my-3">
+                          <div class="form-group my-3 mx-5 px-5">
                             <div
-                              class="d-flex col justify-content-center align-center"
+                              class="d-flex col justify-content-center align-center row"
                             >
                               <label
                                 for="username"
                                 class="col-form-label text-formatting"
                                 >Username
-                                <input
-                                  type="text"
-                                  name="username"
-                                  required
-                                  pattern="^[\w]+$"
-                                  maxlength="20"
-                                  title="Please enter a name with less than 20 characters"
-                                  class="form-control bg-light mb-2"
-                                  id="register-username"
-                                />
-                                <small class=""></small>
                               </label>
+                              <input
+                                type="text"
+                                name="username"
+                                required
+                                pattern="^[\w]+$"
+                                maxlength="20"
+                                title="Please enter a name with less than 20 characters"
+                                class="form-control bg-light mb-3"
+                                id="register-username"
+                              />
+                              <small class=""></small>
                             </div>
 
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="register-email"
                                 class="text-formatting"
                               >
-                                Email
-                                <input
-                                  type="email"
-                                  name="email"
-                                  pattern="^[\w\-.]+@stud\.noroff\.no$"
-                                  required
-                                  title="Please enter an email containing stud@noroff.no"
-                                  class="form-control bg-primary mb-3"
-                                  id="register-email"
-                              /></label>
+                                Email</label
+                              >
+                              <input
+                                type="email"
+                                name="email"
+                                pattern="^[\w\-.]+@stud\.noroff\.no$"
+                                required
+                                title="Please enter an email containing stud@noroff.no"
+                                class="form-control bg-primary mb-3"
+                                id="register-email"
+                              />
                             </div>
                             <div
-                              class="d-flex justify-content-center align-center"
+                              class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="register-password"
                                 class="text-formatting"
                                 >Password
-                                <input
-                                  type="password"
-                                  name="password"
-                                  minlength="8"
-                                  required
-                                  class="form-control bg-primary mb-3"
-                                  title="Please enter a password with 8 characters or more"
-                                  id="register-password"
-                                />
                               </label>
+                              <input
+                                type="password"
+                                name="password"
+                                minlength="8"
+                                required
+                                class="form-control bg-primary mb-3"
+                                title="Please enter a password with 8 characters or more"
+                                id="register-password"
+                              />
                             </div>
                           </div>
                           <div
@@ -419,7 +424,7 @@
                       >
                         <p class="me-3">Already an account?</p>
                         <button
-                          class="btn btn-tertiary text-formatting px-3 py-2"
+                          class="btn btn-outline-tertiary text-formatting text-dark px-3 py-2"
                           type="button"
                           value=""
                           data-bs-target="#login-modal-toggle"
@@ -446,7 +451,8 @@
                 <a
                   class="nav-link text-formatting toggleHideElement"
                   href="/profile/"
-                  ><i class="fa-regular fa-user"></i
+                >
+                  Profile <i class="fa-regular fa-user"></i
                 ></a>
               </li>
             </ul>
@@ -478,7 +484,7 @@
           <h1 class="main-header mt-2 my-lg-3">
             New<span class="text-lowercase d-block"> extraordenary </span>art
           </h1>
-          <h3 class="body-text mt-4 mt-md-5">up for bids</h3>
+          <h2 class="body-text mt-4 mt-md-5 h3">up for bids</h2>
         </div>
         <div class="text-center col-12 col-md-6 p-4">
           <img
@@ -505,7 +511,7 @@
             class="img-fluid"
             id="hero-art"
             src="/src/images/index_explore_time_keepers.jpg"
-            alt="Framed art on top of furniture, promoting art listings"
+            alt="Wooden antiqe clock in front of wall with wallpaper"
           />
           <a href="#" class="btn btn-tertiary col-12 my-3 py-2"
             >Explore all <i class="fa-solid fa-angle-right"> </i
@@ -521,7 +527,7 @@
             class="img-fluid"
             id="hero-art"
             src="/src/images/index_explore_furnitures.jpg"
-            alt="Framed art on top of furniture, promoting art listings"
+            alt="Soft green chair in livingroom"
           />
           <a href="#" class="btn btn-attention col-12 my-3 py-2"
             >Explore all <i class="fa-solid fa-angle-right"> </i
@@ -545,14 +551,13 @@
               alt="Item alt.text"
             />
             <div class="card-body vstack gap-2">
-              <h5 class="item-title recent-listing-title main-header">
+              <h3 class="item-title recent-listing-title main-header h5">
                 Item title
-              </h5>
+              </h3>
               <p class="card-text recent-listing-price">000 $</p>
               <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
             </div>
           </div>
-
           <div class="card bg-primary col-8 col-md-5 col-xl-2 mb-4">
             <img
               src="/src/images/index-recent-listings.jpg"
@@ -560,14 +565,13 @@
               alt="Item alt.text"
             />
             <div class="card-body vstack gap-2">
-              <h5 class="item-title recent-listing-title main-header">
+              <h3 class="item-title recent-listing-title main-header h5">
                 Item title
-              </h5>
+              </h3>
               <p class="card-text recent-listing-price">000 $</p>
               <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
             </div>
           </div>
-
           <div class="card bg-primary col-8 col-md-5 col-xl-2 mb-4">
             <img
               src="/src/images/index-recent-listings.jpg"
@@ -575,14 +579,13 @@
               alt="Item alt.text"
             />
             <div class="card-body vstack gap-2">
-              <h5 class="item-title recent-listing-title main-header">
+              <h3 class="item-title recent-listing-title main-header h5">
                 Item title
-              </h5>
+              </h3>
               <p class="card-text recent-listing-price">000 $</p>
               <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
             </div>
           </div>
-
           <div class="card bg-primary col-8 col-md-5 col-xl-2 mb-4">
             <img
               src="/src/images/index-recent-listings.jpg"
@@ -590,9 +593,9 @@
               alt="Item alt.text"
             />
             <div class="card-body vstack gap-2">
-              <h5 class="item-title recent-listing-title main-header">
+              <h3 class="item-title recent-listing-title main-header h5">
                 Item title
-              </h5>
+              </h3>
               <p class="card-text recent-listing-price">000 $</p>
               <a href="#" class="btn btn-tertiary col-12 my-3 py-2">Bid</a>
             </div>
@@ -600,7 +603,10 @@
         </div>
       </section>
       <div class="text-center">
-        <a href="#"><i class="fa-solid fa-chevron-up text-dark"></i></a>
+        <a href="#" role="button"
+          ><span class="d-none">To top</span
+          ><i class="fa-solid fa-chevron-up text-dark"></i
+        ></a>
       </div>
     </main>
     <footer class="bg-primary-details mt-5 py-5 text-center">
@@ -616,13 +622,16 @@
       </a>
       <div class="d-flex justify-content-center">
         <a href="https://www.instagram.com/"
-          ><i class="fa-brands fa-instagram p-2 m-2"></i
+          ><span class="d-none">Instagram</span
+          ><i class="fa-brands fa-instagram p-2 m-2 text-secondary fs-1"></i
         ></a>
         <a href="https://www.facebook.com/"
-          ><i class="fa-brands fa-facebook p-2 m-2"></i
+          ><span class="d-none">Facebook</span
+          ><i class="fa-brands fa-facebook p-2 m-2 text-secondary fs-1"></i
         ></a>
         <a href="https://twitter.com/"
-          ><i class="fa-brands fa-x-twitter p-2 m-2"></i
+          ><span class="d-none">X/Twitter</span
+          ><i class="fa-brands fa-x-twitter p-2 m-2 text-secondary fs-1"></i
         ></a>
       </div>
     </footer>

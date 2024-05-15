@@ -3,5 +3,5 @@ const logoutButton = document.getElementById('logout-nav-button');
 
 logoutButton.addEventListener('click', () => {
   logout();
-  window.location.reload();
+  window.location.href = '/index.html';
 });
