@@ -1,15 +1,12 @@
 # Semester Project 2: Auction House
 
 ## Built with
-<img src="{https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white}" />
-<img src="{https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1}" />
-
-
-
+![image]({https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white})
+![image]({https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1})
 
 ## Linting
-<img src="{https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white}" />
-<img src="{https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E}" />
+![image]({https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white})
+![image]({https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E})
 
 ## Getting Started
 
