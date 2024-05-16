@@ -1,4 +1,5 @@
 import { getListings } from '../listings/getListings.mjs';
+import { isLoggedIn } from '../auth/loginState.mjs';
 
 export function listingCardTemplate(listingData) {
   const { id, title, media, endsAt } = listingData;
@@ -8,6 +9,7 @@ export function listingCardTemplate(listingData) {
   );
 
   const listingCardContainer = document.createElement('div');
+  listingCardContainer.classList.add('mb-5', 'mt-1');
 
   // Link to specific item
   const listingCardLink = document.createElement('a');
@@ -21,7 +23,6 @@ export function listingCardTemplate(listingData) {
     'col-sm-8',
     'col-md-5',
     'col-xl-3',
-    'mb-4',
     'mx-1',
     'border',
     'listingCard',
@@ -54,7 +55,7 @@ export function listingCardTemplate(listingData) {
     'main-header',
     'text-formatting',
     'h5',
-    'mt-3',
+    'mt-4',
   );
   listingCardContainer.appendChild(listingTitle);
 
@@ -64,13 +65,21 @@ export function listingCardTemplate(listingData) {
   listingCardContainer.appendChild(endsAtDate);
 
   // Bid Link
-
-  const bidLink = document.createElement('a');
-  bidLink.classList.add('btn', 'bg-secondary');
-  bidLink.textContent = `Bid`;
-  bidLink.href = `/add-bid/?id=${listingData.id}`;
-  listingCardContainer.appendChild(bidLink);
-
+  if (isLoggedIn()) {
+    const bidLink = document.createElement('a');
+    bidLink.classList.add(
+      'btn',
+      'bg-tertiary',
+      'toggleHideElement',
+      'd-block',
+      'mx-1',
+      'mt-5',
+      'mb-1',
+    );
+    bidLink.textContent = `Bid`;
+    bidLink.href = `/add-bid/?id=${listingData.id}`;
+    listingCardContainer.appendChild(bidLink);
+  }
   // Appending card to container
   listingFeedContainer.appendChild(listingCardLink);
 
