@@ -457,62 +457,84 @@
         </div>
       </nav>
       <div
-        class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-4 my-0"
+        class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-5 my-0"
       ></div>
     </header>
     <main>
-      <div class="modal-body border-0">
-        <form
-          id="place-bid-form"
-          name="authListing"
-          method="post"
-          class="container needs-validation"
-          novalidate
-        >
-          <div class="form-group row mt-1 mb-5">
-            <div class="d-flex justify-content-center align-center">
-              <img
-                src=""
-                id="listing-bid-img"
-                class="img-thumbnail"
-                width="300"
-                height="450"
-              />
-            </div>
+      <section class="container d-flex justify-content-center my-2">
+        <div class="border col-sm-7 col-md-6 col-lg-5 col-xl-4">
+          <form
+            id="place-bid-form"
+            name="authListing"
+            method="post"
+            class="container needs-validation"
+            novalidate
+          >
             <div
-              class="hstack gap-2 text-formatting d-flex justify-content-center"
+              class="form-group row mt-1 mb-5 d-flex justify-content-center align-center"
             >
-              <p class="my-5 fs-5 me-2">Current bid:</p>
-              <p id="current-bid" class="my-5 fw-bold fs-5"></p>
+              <div class="mt-5 d-flex justify-content-center align-center">
+                <img id="listing-bid-img" class="img-fluid" width="300" />
+              </div>
+              <div class="text-center">
+                <div class="text-formatting mb-4 pb-1">
+                  <p class="mt-5 mb-3 fs-5">Current bid</p>
+                  <p id="current-bid" class="mb-5 fw-bold fs-5"></p>
+                </div>
+
+                <p class="text-formatting mb-1">New Bid</p>
+                <div class="container col-6">
+                  <label for="bid-input" class="text-formatting mt-1"
+                    ><span class="d-none">New bid:</span></label
+                  >
+                  <input
+                    type="number"
+                    name="bid-input"
+                    class="form-control bg-primary mb-3"
+                    id="bid-input"
+                  />
+                </div>
+              </div>
             </div>
-            <div
-              class="container hstack d-flex justify-content-center text-formatting"
-            >
-              <p class="text-formatting col-5">New Bid:</p>
-              <label for="bid-input" class="text-formatting">
-                <span class="hidden">New bid:</span>
-                <input
-                  type="number"
-                  name="bid-input"
-                  class="form-control bg-primary mb-3 me-5"
-                  id="bid-input"
-                />
-              </label>
+            <div class="container d-flex justify-content-center pb-3 mb-5">
+              <button
+                class="btn btn-attention text-formatting px-5 py-2"
+                type="submit"
+                value="submit"
+                id="bid-button"
+              >
+                Submit Bid
+              </button>
             </div>
-          </div>
-          <div class="container d-flex justify-content-center pb-3 mb-5">
-            <button
-              class="btn btn-attention text-formatting px-5 py-2"
-              type="submit"
-              value="submit"
-              id="bid-button"
-            >
-              Submit Bid
-            </button>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="bg-primary-details mt-5 py-5 text-center">
+      <a class="navbar-brand" href="#">
+        <img
+          class="mb-5"
+          id="logo-last-bid"
+          src="/src/images/logo_Last_Bid.png"
+          alt="Logo Last Bid Auction Site"
+          width="150"
+          height="190"
+        />
+      </a>
+      <div class="d-flex justify-content-center">
+        <a href="https://www.instagram.com/"
+          ><span class="d-none">Instagram</span
+          ><i class="fa-brands fa-instagram p-2 m-2 text-secondary fs-2"></i
+        ></a>
+        <a href="https://www.facebook.com/"
+          ><span class="d-none">Facebook</span
+          ><i class="fa-brands fa-facebook p-2 m-2 text-secondary fs-2"></i
+        ></a>
+        <a href="https://twitter.com/"
+          ><span class="d-none">X Twitter</span
+          ><i class="fa-brands fa-x-twitter p-2 m-2 text-secondary fs-2"></i
+        ></a>
+      </div>
+    </footer>
   </body>
 </html>
