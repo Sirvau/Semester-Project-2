@@ -63,6 +63,14 @@ export function listingCardTemplate(listingData) {
   endsAtDate.textContent = `${new Date(endsAt).toLocaleString()}`;
   listingCardContainer.appendChild(endsAtDate);
 
+  // Bid Link
+
+  const bidLink = document.createElement('a');
+  bidLink.classList.add('btn', 'bg-secondary');
+  bidLink.textContent = `Bid`;
+  bidLink.href = `/add-bid/?id=${listingData.id}`;
+  listingCardContainer.appendChild(bidLink);
+
   // Appending card to container
   listingFeedContainer.appendChild(listingCardLink);
 
@@ -82,4 +90,8 @@ export async function displayAllListings() {
   await renderListingCardTemplate(listings.data, container);
 }
 
-//---------------------------------------------------------------------------------------
+// export async function displayRecentListings() {
+//   const recentListings = await getListings();
+//   const container = document.querySelector('#');
+//   await renderListingCardTemplate(listings.data, container);
+// }
