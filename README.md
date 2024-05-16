@@ -1,10 +1,25 @@
 # Semester Project 2: Auction House
 
-## Built with
-- HTML5 <a href="http://www.w3.org/html/logo/">
-<img src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Powered" title="HTML5 Powered">
-</a>
+## Project Description
 
+This project is a front-end application for an auction website. Users can register for an account, add listings for items they wish to sell, and bid on items listed by other users. Each registered user receives an initial credit of 1000 upon registration, which they can use to place bids on items. Non-registered users can browse through listings but need to register to participate in auctions.
+The project utilizes existing API endpoints provided by Noroff for managing auction functionality.
+
+The project contains following pages: 
+* Landing page
+* Listed Items page/search and filter feed
+* Specific Listing page
+* Profile page
+* Add Bid page
+
+
+### Built with
+- HTML5
+- SCSS
+- SASS
+- JavaScript
+- Bootstrap
+  
 ## Getting Started
 
 ### Prerequisites
