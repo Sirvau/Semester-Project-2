@@ -101,11 +101,35 @@ export async function displaySpecificListing() {
     currentBidText.textContent = 'Current Bid:';
 
     const currentBidAmount = document.getElementById('current-bid-amount');
-    currentBidAmount.textContent = 'Variable Amount 000 $';
+    const sortedBids = singleListing.data.bids.sort((a, b) => {
+      return b.amount - a.amount;
+    });
+    currentBidAmount.textContent = sortedBids[0].amount + `$`;
+
+    console.log(sortedBids);
 
     //Ends At Date
     const endsAtDate = document.getElementById('ends-at');
+    endsAtDate.classList.add('body-text', 'my-5');
     endsAtDate.textContent = `Auction ends at: ${new Date(singleListing.data.endsAt).toLocaleString()}`;
+
+    //Place Bid  link
+    const placeBidLinkContainer = document.getElementById(
+      'place-bid-link-container',
+    );
+    const placeBidLink = document.createElement('a');
+    placeBidLink.href = `/add-bid/?id=${singleListing.data.id}`;
+    placeBidLink.textContent = `Place a Bid`;
+    placeBidLink.classList.add(
+      'btn',
+      'btn-attention',
+      'text-formatting',
+      'px-5',
+      'py-2',
+      'bg-tertiary',
+    );
+
+    placeBidLinkContainer.appendChild(placeBidLink);
 
     return singlePostMainContainer;
   } catch (error) {
