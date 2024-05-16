@@ -41,6 +41,9 @@ export async function addBidToListing(id, bidData) {
 export async function renderListingDetails() {
   const listingData = await getListingById(ID);
 
+  const listingTitle = document.getElementById('title-listed-item');
+  listingTitle.textContent = listingData.data.title;
+
   const listingImg = document.getElementById('listing-bid-img');
   listingImg.src = listingData.data.media[0].url;
   listingImg.alt = listingData.data.media[0].alt;
