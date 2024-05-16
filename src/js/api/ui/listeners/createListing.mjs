@@ -20,7 +20,7 @@ export function createListingListener() {
         console.log(listing);
         try {
           await createListing(listing);
-          window.location.href = '/listed-items/';
+          window.location.pathname = '/listed-items/';
         } catch (error) {
           console.log('Error creating new listing:', error);
         }
@@ -41,7 +41,7 @@ export function createListingListener() {
         console.log(listing);
         try {
           await createListing(listing);
-          window.location.href = '/listed-items/';
+          window.location.pathname = '/listed-items/';
         } catch (error) {
           console.log('Error creating new listing:', error);
         }
