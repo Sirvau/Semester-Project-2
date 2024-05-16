@@ -506,98 +506,10 @@
               class="body-text text-formatting fw-bold fs-5"
             ></p>
             <small id="ends-at" class="d-block"></small>
-
-            <a
-              href="#"
-              id="place-a-bid-button"
-              data-bs-target="#place-bid-modal-toggle"
-              data-bs-toggle="modal"
-              class="btn btn-tertiary body-text text-formatting text-dark mt-5 mb-5 py-2 px-4"
-              >Place Bid</a
-            >
             <div
-              class="modal fade"
-              id="place-bid-modal-toggle"
-              aria-hidden="true"
-              aria-labelledby="place-bid-modal-toggle-label"
-              tabindex="-1"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content border-0 container bg-primary">
-                  <div class="modal-header border-0 row">
-                    <button
-                      type="button"
-                      class="btn-close row"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                    <div>
-                      <h1
-                        class="main-header text-formatting text-center h2 mt-3 mb-4"
-                        id="place-bid-modal-toggle-label"
-                      >
-                        Place a Bid
-                      </h1>
-                      <h2 class="text-formatting h4">Item title</h2>
-                      <hr />
-                    </div>
-                  </div>
-                  <div class="modal-body border-0">
-                    <form
-                      id="place-bid-form"
-                      name="authListing"
-                      method="post"
-                      class="container needs-validation"
-                      novalidate
-                    >
-                      <div class="form-group row mt-1 mb-5">
-                        <div class="d-flex justify-content-center align-center">
-                          <img
-                            src="../src/images/index_explore_furnitures.jpg"
-                            id="specific-item-bid-img"
-                            class="img-thumbnail"
-                            width="300"
-                            height="450"
-                          />
-                        </div>
-                        <div
-                          class="hstack gap-2 text-formatting d-flex justify-content-center"
-                        >
-                          <p class="my-5 fs-5 me-2">Current bid:</p>
-                          <p class="my-5 fw-bold fs-5">000 $</p>
-                        </div>
-                        <div
-                          class="container hstack d-flex justify-content-center text-formatting"
-                        >
-                          <p class="text-formatting col-5">New Bid:</p>
-                          <label for="bid-input" class="text-formatting">
-                            <span class="hidden">New bid:</span>
-                            <input
-                              type="number"
-                              name="bid-input"
-                              class="form-control bg-primary mb-3 me-5"
-                              id="bid-input"
-                            />
-                          </label>
-                        </div>
-                      </div>
-                      <div
-                        class="container d-flex justify-content-center pb-3 mb-5"
-                      >
-                        <button
-                          class="btn btn-attention text-formatting px-5 py-2"
-                          type="submit"
-                          value="submit"
-                          id="bid-button"
-                        >
-                          Submit Bid
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+              id="place-bid-link-container"
+              class="container d-flex justify-content-center pb-3 mb-5"
+            ></div>
           </div>
         </div>
       </section>

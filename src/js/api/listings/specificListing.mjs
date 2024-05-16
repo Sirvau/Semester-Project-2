@@ -1,15 +1,8 @@
 import { API_BASE, API_LISTINGS, ID } from '../constants.mjs';
 
-const listingSpecificURL = `${API_BASE}${API_LISTINGS}/${ID}`;
-
-//---------------------------------------------------Function for displaying Specific Listing ---------------------------------------
-
-export async function displaySpecificListing() {
-  if (!ID) {
-    throw new Error('Post ID is missing');
-  }
-
+export async function getListingById(id) {
   try {
+    const listingSpecificURL = `${API_BASE}${API_LISTINGS}/${id}?_bids=true`;
     const response = await fetch(listingSpecificURL);
     console.log('Response status:', response.status);
 
@@ -19,6 +12,20 @@ export async function displaySpecificListing() {
 
     const singleListing = await response.json();
     console.log('Fetched listing data:', singleListing);
+    return singleListing;
+  } catch (error) {
+    console.error('Error fetching listing:', error);
+  }
+}
+
+//---------------------------------------------------Function for displaying Specific Listing ---------------------------------------
+
+export async function displaySpecificListing() {
+  if (!ID) {
+    throw new Error('Post ID is missing');
+  }
+  try {
+    const singleListing = await getListingById(ID);
 
     const singlePostMainContainer = document.getElementById(
       'single-listing-main-container',
@@ -94,11 +101,35 @@ export async function displaySpecificListing() {
     currentBidText.textContent = 'Current Bid:';
 
     const currentBidAmount = document.getElementById('current-bid-amount');
-    currentBidAmount.textContent = 'Variable Amount 000 $';
+    const sortedBids = singleListing.data.bids.sort((a, b) => {
+      return b.amount - a.amount;
+    });
+    currentBidAmount.textContent = sortedBids[0].amount + `$`;
+
+    console.log(sortedBids);
 
     //Ends At Date
     const endsAtDate = document.getElementById('ends-at');
+    endsAtDate.classList.add('body-text', 'my-5');
     endsAtDate.textContent = `Auction ends at: ${new Date(singleListing.data.endsAt).toLocaleString()}`;
+
+    //Place Bid  link
+    const placeBidLinkContainer = document.getElementById(
+      'place-bid-link-container',
+    );
+    const placeBidLink = document.createElement('a');
+    placeBidLink.href = `/add-bid/?id=${singleListing.data.id}`;
+    placeBidLink.textContent = `Place a Bid`;
+    placeBidLink.classList.add(
+      'btn',
+      'btn-attention',
+      'text-formatting',
+      'px-5',
+      'py-2',
+      'bg-tertiary',
+    );
+
+    placeBidLinkContainer.appendChild(placeBidLink);
 
     return singlePostMainContainer;
   } catch (error) {

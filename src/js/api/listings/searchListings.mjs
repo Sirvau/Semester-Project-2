@@ -2,7 +2,11 @@ import { API_BASE, API_SEARCH_LISTING } from '../constants.mjs';
 
 export async function searchListing(value) {
   try {
-    let searchURL = API_BASE + API_SEARCH_LISTING + value;
+    let searchURL = new URL(API_BASE + API_SEARCH_LISTING);
+
+    searchURL.searchParams.append('q', value);
+
+    console.log(searchURL);
 
     const response = await fetch(searchURL);
     const result = response.json();
