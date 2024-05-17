@@ -463,21 +463,14 @@
       </nav>
       <div
         class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-5 my-0"
-      >
-        <form class="d-none d-flex col-12 col-md-6" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">
-            <i class="fa-solid fa-magnifying-glass fs-4 text-primary"></i>
-          </button>
-        </form>
-      </div>
+      ></div>
     </header>
     <main class="container col-sm-11 col-md-10 col-xl-9 col-xxl-8 mb-5">
+      <div class="d-flex justify-content-center d-none loader mt-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
       <section
         class="container text-center d-md-flex justify-content-md-center align-items-md-center my-5 py-5"
       >

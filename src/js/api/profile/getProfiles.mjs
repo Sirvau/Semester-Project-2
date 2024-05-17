@@ -1,8 +1,10 @@
 import { API_BASE, API_PROFILES, API_KEY } from '../constants.mjs';
 import { load } from '../storage/load.mjs';
+import { showLoader, hideLoader } from '../ui/loader/loader.mjs';
 
 export async function getSingleProfile() {
   try {
+    showLoader();
     const profile = load('profile');
 
     const response = await fetch(API_BASE + API_PROFILES + `/${profile.name}`, {
@@ -15,7 +17,7 @@ export async function getSingleProfile() {
     });
     if (response.ok) {
       const profileData = await response.json();
-      console.log(profileData);
+      hideLoader();
       return await profileData;
     }
   } catch (error) {

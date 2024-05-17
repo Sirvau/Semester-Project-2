@@ -9,8 +9,7 @@ import { getListingById } from './specificListing.mjs';
 
 import { load } from '../storage/load.mjs';
 
-//Add Bid
-
+//Add Bid to listing function
 export async function addBidToListing(id, bidData) {
   try {
     const token = load('token');
@@ -38,6 +37,7 @@ export async function addBidToListing(id, bidData) {
   }
 }
 
+//Listing Details displayed in bid-form
 export async function renderListingDetails() {
   const listingData = await getListingById(ID);
 

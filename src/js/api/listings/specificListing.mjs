@@ -1,5 +1,6 @@
 import { isLoggedIn } from '../auth/loginState.mjs';
 import { API_BASE, API_LISTINGS, ID } from '../constants.mjs';
+import { hideLoader, showLoader } from '../ui/loader/loader.mjs';
 
 export async function getListingById(id) {
   try {
@@ -26,6 +27,7 @@ export async function displaySpecificListing() {
     throw new Error('Post ID is missing');
   }
   try {
+    showLoader();
     const singleListing = await getListingById(ID);
 
     const singlePostMainContainer = document.getElementById(
@@ -131,7 +133,7 @@ export async function displaySpecificListing() {
 
       placeBidLinkContainer.appendChild(placeBidLink);
     }
-
+    hideLoader();
     return singlePostMainContainer;
   } catch (error) {
     console.error('Error fetching listing:', error);

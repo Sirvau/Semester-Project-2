@@ -1,5 +1,6 @@
 import { getListings } from '../listings/getListings.mjs';
 import { isLoggedIn } from '../auth/loginState.mjs';
+import { showLoader, hideLoader } from '../ui/loader/loader.mjs';
 
 export function listingCardTemplate(listingData) {
   const { id, title, media, endsAt } = listingData;
@@ -134,10 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadListings(pageNumber) {
+  showLoader();
   const listings = await getListings(pageNumber);
   const container = document.querySelector('#listing-card-container');
   container.innerHTML = '';
   renderListingCardTemplate(listings.data, container);
+  hideLoader();
 }
 
 // export async function displayRecentListings() {

@@ -22,11 +22,7 @@
       type="module"
       src="../src/js/api/routes/listingFeed.mjs"
     ></script>
-    <script
-      defer
-      type="module"
-      src="../src/js/api/ui/listeners/listingsPagination.mjs"
-    ></script>
+
     <meta description="Search, find and bid on listed imems." />
 
     <title>Listed Items | Last Bid</title>
@@ -501,6 +497,11 @@
         </div>
       </section>
       <section>
+        <div class="d-flex justify-content-center d-none loader">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
         <div
           id="listing-card-container"
           class="container d-flex justify-content-center justify-content-md-evenly row flex-wrap text-center"
