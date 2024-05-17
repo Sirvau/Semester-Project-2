@@ -5,8 +5,10 @@ import './ui/listeners/logout.mjs';
 import './ui/listeners/register.mjs';
 import { getSingleProfile } from './profile/getProfiles.mjs';
 import { createListingListener } from './ui/listeners/createListing.mjs';
+import { displayRecentListings } from './listings/recentListings.mjs';
 
 hideElements();
 toggleButtonsVisibility();
 createListingListener();
 getSingleProfile();
+displayRecentListings();
