@@ -67,3 +67,32 @@ export function createListingListener() {
     console.log('Error adding submit listener:', error);
   }
 }
+
+// Check validity
+
+let titleInput = document.getElementById('listing-title');
+let dateInput = document.getElementById('date');
+
+titleInput.addEventListener('change', (event) => {
+  let titleInput = event.target;
+  let valid = titleInput.checkValidity();
+  if (!valid) {
+    titleInput.classList.remove('is-valid');
+    titleInput.classList.add('is-invalid');
+  } else {
+    titleInput.classList.remove('is-invalid');
+    titleInput.classList.add('is-valid');
+  }
+});
+
+dateInput.addEventListener('change', (event) => {
+  let dateInput = event.target;
+  let valid = dateInput.checkValidity();
+  if (!valid) {
+    dateInput.classList.remove('is-valid');
+    dateInput.classList.add('is-invalid');
+  } else {
+    dateInput.classList.remove('is-invalid');
+    dateInput.classList.add('is-valid');
+  }
+});

@@ -142,9 +142,3 @@ async function loadListings(pageNumber) {
   renderListingCardTemplate(listings.data, container);
   hideLoader();
 }
-
-// export async function displayRecentListings() {
-//   const recentListings = await getListings();
-//   const container = document.querySelector('#recent-listings-main-container');
-//   await renderListingCardTemplate(listings.data, container);
-// }
