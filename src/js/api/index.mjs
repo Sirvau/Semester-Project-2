@@ -1,14 +1,15 @@
 import { hideElements } from './ui/visability/showHideToggle.mjs';
 import { toggleButtonsVisibility } from './ui/visability/showHideToggle.mjs';
+import { createListingListener } from './ui/listeners/createListing.mjs';
+import { validateCreateListingNavForm } from './ui/listeners/createListing.mjs';
+
+//Nav header Listeners
 import './ui/listeners/login.mjs';
 import './ui/listeners/logout.mjs';
 import './ui/listeners/register.mjs';
-import { getSingleProfile } from './profile/getProfiles.mjs';
-import { createListingListener } from './ui/listeners/createListing.mjs';
-import { displayRecentListings } from './listings/recentListings.mjs';
+createListingListener();
+validateCreateListingNavForm();
 
+//Visibility of elements
 hideElements();
 toggleButtonsVisibility();
-createListingListener();
-getSingleProfile();
-displayRecentListings();

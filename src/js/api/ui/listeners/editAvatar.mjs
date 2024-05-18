@@ -21,6 +21,7 @@ export function editAvatarListener() {
           };
 
           await editAvatar(avatarData);
+
           window.location.pathname = '/profile/';
         } catch (error) {
           console.error('Error editing avatar', error);
@@ -33,14 +34,18 @@ export function editAvatarListener() {
 }
 
 // Check validity
+export async function validateEditAvatarForm() {
+  let urlInputAvatar = document.getElementById('avatar-url');
 
-let urlInputAvatar = document.getElementById('avatar-url');
-
-urlInputAvatar.addEventListener('change', (event) => {
-  let urlInputAvatar = event.target;
-  let valid = urlInputAvatar.checkValidity();
-  if (!valid) {
-    urlInputAvatar.classList.remove('is-valid');
-    urlInputAvatar.classList.add('is-invalid');
-  }
-});
+  urlInputAvatar.addEventListener('change', (event) => {
+    let urlInputAvatar = event.target;
+    let valid = urlInputAvatar.checkValidity();
+    if (!valid) {
+      urlInputAvatar.classList.remove('is-valid');
+      urlInputAvatar.classList.add('is-invalid');
+    } else {
+      urlInputAvatar.classList.remove('is-invalid');
+      urlInputAvatar.classList.add('is-valid');
+    }
+  });
+}
