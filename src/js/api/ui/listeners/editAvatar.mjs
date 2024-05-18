@@ -42,8 +42,5 @@ urlInputAvatar.addEventListener('change', (event) => {
   if (!valid) {
     urlInputAvatar.classList.remove('is-valid');
     urlInputAvatar.classList.add('is-invalid');
-  } else {
-    urlInputAvatar.classList.remove('is-invalid');
-    urlInputAvatar.classList.add('is-valid');
   }
 });

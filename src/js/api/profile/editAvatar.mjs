@@ -1,8 +1,8 @@
 import { API_BASE, API_PROFILES, API_KEY } from '../constants.mjs';
 import { load } from '../storage/load.mjs';
 
-const userFeedbackEditAvatar = document.getElementById(
-  'validation-edit-avatar-feedback',
+const editAvatarFormValidation = document.getElementById(
+  'validation-avatar-form-feedback',
 );
 
 export async function editAvatar(avatarData) {
@@ -27,7 +27,7 @@ export async function editAvatar(avatarData) {
       return await result;
     }
   } catch (error) {
-    userFeedbackEditAvatar.classList.remove('d-none');
+    editAvatarFormValidation.classList.remove('d-none');
     console.error('Could not edit avatar', error);
     throw error;
   }
