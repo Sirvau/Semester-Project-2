@@ -104,18 +104,23 @@ export async function displaySpecificListing() {
     currentBidText.textContent = 'Current Bid:';
 
     const currentBidAmount = document.getElementById('current-bid-amount');
-    const sortedBids = singleListing.data.bids.sort((a, b) => {
-      return b.amount - a.amount;
-    });
-    currentBidAmount.textContent = sortedBids[0].amount + `$`;
 
-    //Ends At Date
+    if (singleListing.data.bids.length > 0) {
+      const sortedBids = singleListing.data.bids.sort((a, b) => {
+        return b.amount - a.amount;
+      });
+      currentBidAmount.textContent = `${sortedBids[0].amount} $`;
+    } else {
+      currentBidAmount.textContent = '0 $';
+    }
+
+    // Ends At Date
     const endsAtDate = document.getElementById('ends-at');
     endsAtDate.classList.add('body-text', 'my-5');
     endsAtDate.textContent = `Auction ends at: ${new Date(singleListing.data.endsAt).toLocaleString()}`;
 
     if (isLoggedIn()) {
-      //Place Bid  link
+      // Place Bid link
       const placeBidLinkContainer = document.getElementById(
         'place-bid-link-container',
       );
