@@ -9,6 +9,10 @@ import { getListingById } from './specificListing.mjs';
 
 import { load } from '../storage/load.mjs';
 
+const bidFormValidation = document.getElementById(
+  'validation-bid-form-feedback',
+);
+
 //Add Bid to listing function
 export async function addBidToListing(id, bidData) {
   try {
@@ -29,6 +33,7 @@ export async function addBidToListing(id, bidData) {
     if (response.ok) {
       return await response.json();
     } else {
+      bidFormValidation.classList.remove('d-none');
       throw new Error('Failed to add bid');
     }
   } catch (error) {

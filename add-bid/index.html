@@ -583,7 +583,7 @@
             id="place-bid-form"
             name="authListing"
             method="post"
-            class="container needs-validation"
+            class="container"
             novalidate
           >
             <div
@@ -610,11 +610,19 @@
                   <input
                     type="number"
                     name="bid-input"
+                    required
+                    min="1"
                     class="form-control bg-primary mb-3"
                     id="bid-input"
                   />
                 </div>
               </div>
+              <small
+                id="validation-bid-form-feedback"
+                class="mb-2 text-center body-text text-invalid d-none"
+              >
+                Please bid higher than current bid.
+              </small>
             </div>
             <div class="container d-flex justify-content-center pb-3 mb-5">
               <button
