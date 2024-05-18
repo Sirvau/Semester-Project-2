@@ -48,6 +48,11 @@ export function recentListingsTemplate(listingData) {
     listingCardContainer.appendChild(defaultImg);
   }
 
+  //Car Info Container
+
+  const cardInfoContainer = document.createElement('div');
+  cardInfoContainer.classList.add('container');
+
   // Card Title
   const listingTitle = document.createElement('h2');
   listingTitle.textContent = title;
@@ -58,12 +63,16 @@ export function recentListingsTemplate(listingData) {
     'h5',
     'mt-4',
   );
-  listingCardContainer.appendChild(listingTitle);
 
   // Card Ends At Date
   const endsAtDate = document.createElement('small');
   endsAtDate.textContent = `${new Date(endsAt).toLocaleString()}`;
-  listingCardContainer.appendChild(endsAtDate);
+
+  cardInfoContainer.appendChild(listingTitle);
+  cardInfoContainer.appendChild(endsAtDate);
+  listingCardContainer.appendChild(cardInfoContainer);
+
+  listingFeedContainer.appendChild(listingCardLink);
 
   // Bid Link
   if (isLoggedIn()) {
@@ -75,14 +84,11 @@ export function recentListingsTemplate(listingData) {
       'd-block',
       'mx-1',
       'mt-5',
-      'mb-1',
     );
     bidLink.textContent = `Bid`;
     bidLink.href = `/add-bid/?id=${listingData.id}`;
-    listingCardContainer.appendChild(bidLink);
+    cardInfoContainer.appendChild(bidLink);
   }
-
-  listingFeedContainer.appendChild(listingCardLink);
 
   return listingCardLink;
 }
