@@ -101,14 +101,18 @@ export async function renderRecentListingsTemplate(listingData) {
 }
 
 export async function displayRecentListings() {
-  showLoader();
-  const listings = await getListings();
-  const sortedListings = listings.data.sort(
-    (a, b) => new Date(b.endsAt) - new Date(a.endsAt),
-  );
-  const recentListings = sortedListings.slice(0, 6);
+  try {
+    showLoader();
+    const listings = await getListings();
+    const sortedListings = listings.data.sort(
+      (a, b) => new Date(b.created) - new Date(a.created),
+    );
+    const recentListings = sortedListings.slice(0, 6);
 
-  const container = document.querySelector('#listing-card-container');
-  await renderRecentListingsTemplate(recentListings, container);
-  hideLoader();
+    const container = document.querySelector('#listing-card-container');
+    await renderRecentListingsTemplate(recentListings, container);
+    hideLoader();
+  } catch (error) {
+    console.error('Error displaying recent listings', error);
+  }
 }
