@@ -1,12 +1,12 @@
-import { getListings } from '../listings/getListings.mjs';
+import { getListings } from './getListings.mjs';
 import { isLoggedIn } from '../auth/loginState.mjs';
 import { showLoader, hideLoader } from '../ui/loader/loader.mjs';
 
-export function listingCardTemplate(listingData) {
+export function recentListingsTemplate(listingData) {
   const { id, title, media, endsAt } = listingData;
 
   const listingFeedContainer = document.querySelector(
-    '#listing-card-container',
+    '#recent-listings-main-container',
   );
 
   const listingCardContainer = document.createElement('div');
@@ -48,6 +48,11 @@ export function listingCardTemplate(listingData) {
     listingCardContainer.appendChild(defaultImg);
   }
 
+  //Car Info Container
+
+  const cardInfoContainer = document.createElement('div');
+  cardInfoContainer.classList.add('container');
+
   // Card Title
   const listingTitle = document.createElement('h2');
   listingTitle.textContent = title;
@@ -58,12 +63,16 @@ export function listingCardTemplate(listingData) {
     'h5',
     'mt-4',
   );
-  listingCardContainer.appendChild(listingTitle);
 
   // Card Ends At Date
   const endsAtDate = document.createElement('small');
   endsAtDate.textContent = `${new Date(endsAt).toLocaleString()}`;
-  listingCardContainer.appendChild(endsAtDate);
+
+  cardInfoContainer.appendChild(listingTitle);
+  cardInfoContainer.appendChild(endsAtDate);
+  listingCardContainer.appendChild(cardInfoContainer);
+
+  listingFeedContainer.appendChild(listingCardLink);
 
   // Bid Link
   if (isLoggedIn()) {
@@ -75,76 +84,31 @@ export function listingCardTemplate(listingData) {
       'd-block',
       'mx-1',
       'mt-5',
-      'mb-1',
     );
     bidLink.textContent = `Bid`;
     bidLink.href = `/add-bid/?id=${listingData.id}`;
-    listingCardContainer.appendChild(bidLink);
+    cardInfoContainer.appendChild(bidLink);
   }
-  // Appending card to container
-  listingFeedContainer.appendChild(listingCardLink);
 
   return listingCardLink;
 }
 
-export async function renderListingCardTemplate(listingData, parent) {
+export async function renderRecentListingsTemplate(listingData) {
   listingData.forEach((listing) => {
-    const listingElement = listingCardTemplate(listing);
-    parent.appendChild(listingElement);
+    const listingElement = recentListingsTemplate(listing);
+    return listingElement;
   });
 }
 
-export async function displayAllListings() {
-  const listings = await getListings();
-  const container = document.querySelector('#listing-card-container');
-  await renderListingCardTemplate(listings.data, container);
-}
-
-//Pagination
-
-let currentPage = 1;
-
-document.addEventListener('DOMContentLoaded', () => {
-  const pageLinks = document.querySelectorAll('.page-number');
-  const prevPageLink = document.getElementById('prev-page');
-  const nextPageLink = document.getElementById('next-page');
-
-  pageLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      currentPage = parseInt(event.target.getAttribute('data-page'));
-      loadListings(currentPage);
-    });
-  });
-
-  prevPageLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (currentPage > 1) {
-      currentPage--;
-      loadListings(currentPage);
-    }
-  });
-
-  nextPageLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    currentPage++;
-    loadListings(currentPage);
-  });
-
-  loadListings(currentPage);
-});
-
-async function loadListings(pageNumber) {
+export async function displayRecentListings() {
   showLoader();
-  const listings = await getListings(pageNumber);
+  const listings = await getListings();
+  const sortedListings = listings.data.sort(
+    (a, b) => new Date(b.endsAt) - new Date(a.endsAt),
+  );
+  const recentListings = sortedListings.slice(0, 6);
+
   const container = document.querySelector('#listing-card-container');
-  container.innerHTML = '';
-  renderListingCardTemplate(listings.data, container);
+  await renderRecentListingsTemplate(recentListings, container);
   hideLoader();
 }
-
-// export async function displayRecentListings() {
-//   const recentListings = await getListings();
-//   const container = document.querySelector('#recent-listings-main-container');
-//   await renderListingCardTemplate(listings.data, container);
-// }

@@ -1,5 +1,6 @@
 import { isLoggedIn } from '../auth/loginState.mjs';
 import { API_BASE, API_LISTINGS, ID } from '../constants.mjs';
+import { hideLoader, showLoader } from '../ui/loader/loader.mjs';
 
 export async function getListingById(id) {
   try {
@@ -26,6 +27,7 @@ export async function displaySpecificListing() {
     throw new Error('Post ID is missing');
   }
   try {
+    showLoader();
     const singleListing = await getListingById(ID);
 
     const singlePostMainContainer = document.getElementById(
@@ -102,18 +104,23 @@ export async function displaySpecificListing() {
     currentBidText.textContent = 'Current Bid:';
 
     const currentBidAmount = document.getElementById('current-bid-amount');
-    const sortedBids = singleListing.data.bids.sort((a, b) => {
-      return b.amount - a.amount;
-    });
-    currentBidAmount.textContent = sortedBids[0].amount + `$`;
 
-    //Ends At Date
+    if (singleListing.data.bids.length > 0) {
+      const sortedBids = singleListing.data.bids.sort((a, b) => {
+        return b.amount - a.amount;
+      });
+      currentBidAmount.textContent = `${sortedBids[0].amount} $`;
+    } else {
+      currentBidAmount.textContent = '0 $';
+    }
+
+    // Ends At Date
     const endsAtDate = document.getElementById('ends-at');
     endsAtDate.classList.add('body-text', 'my-5');
     endsAtDate.textContent = `Auction ends at: ${new Date(singleListing.data.endsAt).toLocaleString()}`;
 
     if (isLoggedIn()) {
-      //Place Bid  link
+      // Place Bid link
       const placeBidLinkContainer = document.getElementById(
         'place-bid-link-container',
       );
@@ -131,7 +138,7 @@ export async function displaySpecificListing() {
 
       placeBidLinkContainer.appendChild(placeBidLink);
     }
-
+    hideLoader();
     return singlePostMainContainer;
   } catch (error) {
     console.error('Error fetching listing:', error);

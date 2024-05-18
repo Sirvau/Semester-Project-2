@@ -10,11 +10,19 @@ export function createListingListener() {
         event.preventDefault();
         const navForm = event.target;
         const formData = new FormData(navForm);
+
+        const mediaUrls = [];
+        const mediaFields = ['listing-url', 'listing-url-2', 'listing-url-3'];
+        mediaFields.forEach((field) => {
+          const url = formData.get(field);
+          if (url) mediaUrls.push({ url });
+        });
+
         const listing = {
           title: formData.get('listing-title'),
           description: formData.get('listing-description'),
           tags: formData.get('listing-tags').split(','),
-          media: [{ url: formData.get('listing-url') }],
+          media: mediaUrls,
           endsAt: formData.get('listing-date'),
         };
         console.log(listing);
@@ -31,11 +39,19 @@ export function createListingListener() {
         event.preventDefault();
         const profileForm = event.target;
         const formData = new FormData(profileForm);
+
+        const mediaUrls = [];
+        const mediaFields = ['listing-url', 'listing-url-2', 'listing-url-3'];
+        mediaFields.forEach((field) => {
+          const url = formData.get(field);
+          if (url) mediaUrls.push({ url });
+        });
+
         const listing = {
           title: formData.get('listing-title'),
           description: formData.get('listing-description'),
           tags: formData.get('listing-tags').split(','),
-          media: [{ url: formData.get('listing-url') }],
+          media: mediaUrls,
           endsAt: formData.get('listing-date'),
         };
         console.log(listing);
