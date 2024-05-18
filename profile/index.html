@@ -633,6 +633,7 @@
                     name="authAvatar"
                     method="PUT"
                     class="container needs-validation"
+                    novalidate
                   >
                     <div
                       class="form-group row my-1 justify-content-center mx-5 px-4"
@@ -657,7 +658,15 @@
                           type="url"
                           name="avatar"
                           class="form-control bg-primary mb-3"
+                          required
                         />
+                        <small
+                          id="validation-edit-avatar-feedback"
+                          class="invalid-feedback mb-2"
+                        >
+                          Please enter a valid URL to a public and accessible
+                          image.
+                        </small>
                       </div>
                     </div>
                     <div
