@@ -92,7 +92,7 @@
                       <div class="modal-body border-0">
                         <form
                           id="nav-create-listing-form"
-                          name="authListing"
+                          name="listingBidPage"
                           method="post"
                           class="container needs-validation"
                           novalidate
@@ -152,6 +152,53 @@
                                 name="listing-url"
                                 class="form-control bg-primary mb-3"
                               />
+                            </div>
+                            <div
+                              class="accordion accordion-flush"
+                              id="accordionFlush"
+                            >
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button
+                                    class="accordion-button collapsed bg-primary body-text"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne"
+                                    aria-expanded="false"
+                                    aria-controls="flush-collapseOne"
+                                  >
+                                    Add more images
+                                  </button>
+                                </h2>
+                                <div
+                                  id="flush-collapseOne"
+                                  class="accordion-collapse collapse"
+                                  data-bs-parent="#accordionFlush"
+                                >
+                                  <div class="accordion-body bg-primary">
+                                    <label
+                                      for="listing-url-2"
+                                      class="text-formatting"
+                                      >Media
+                                    </label>
+                                    <input
+                                      type="url"
+                                      name="listing-url-2"
+                                      class="form-control bg-primary mb-3"
+                                    />
+                                    <label
+                                      for="listing-url-3"
+                                      class="text-formatting"
+                                      >Media
+                                    </label>
+                                    <input
+                                      type="url"
+                                      name="listing-url-3"
+                                      class="form-control bg-primary mb-3"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                             <div
                               class="d-flex justify-content-center align-center row"
