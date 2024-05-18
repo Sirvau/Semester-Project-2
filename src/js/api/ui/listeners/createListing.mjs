@@ -68,31 +68,63 @@ export function createListingListener() {
   }
 }
 
-// Check validity
+// Create Listing Form validation
+export function validateCreateListingNavForm() {
+  let titleInput = document.getElementById('listing-title');
+  let dateInput = document.getElementById('date');
 
-let titleInput = document.getElementById('listing-title');
-let dateInput = document.getElementById('date');
+  titleInput.addEventListener('change', (event) => {
+    let titleInput = event.target;
+    let valid = titleInput.checkValidity();
+    if (!valid) {
+      titleInput.classList.remove('is-valid');
+      titleInput.classList.add('is-invalid');
+    } else {
+      titleInput.classList.remove('is-invalid');
+      titleInput.classList.add('is-valid');
+    }
+  });
 
-titleInput.addEventListener('change', (event) => {
-  let titleInput = event.target;
-  let valid = titleInput.checkValidity();
-  if (!valid) {
-    titleInput.classList.remove('is-valid');
-    titleInput.classList.add('is-invalid');
-  } else {
-    titleInput.classList.remove('is-invalid');
-    titleInput.classList.add('is-valid');
-  }
-});
+  dateInput.addEventListener('change', (event) => {
+    let dateInput = event.target;
+    let valid = dateInput.checkValidity();
+    if (!valid) {
+      dateInput.classList.remove('is-valid');
+      dateInput.classList.add('is-invalid');
+    } else {
+      dateInput.classList.remove('is-invalid');
+      dateInput.classList.add('is-valid');
+    }
+  });
+}
 
-dateInput.addEventListener('change', (event) => {
-  let dateInput = event.target;
-  let valid = dateInput.checkValidity();
-  if (!valid) {
-    dateInput.classList.remove('is-valid');
-    dateInput.classList.add('is-invalid');
-  } else {
-    dateInput.classList.remove('is-invalid');
-    dateInput.classList.add('is-valid');
-  }
-});
+export function validateCreateListingProfileForm() {
+  let titleInputBottomForm = document.getElementById(
+    'listing-title-bottom-form',
+  );
+  let dateInputBottomForm = document.getElementById('date-bottom-form');
+
+  titleInputBottomForm.addEventListener('change', (event) => {
+    let titleInputBottomForm = event.target;
+    let valid = titleInputBottomForm.checkValidity();
+    if (!valid) {
+      titleInputBottomForm.classList.remove('is-valid');
+      titleInputBottomForm.classList.add('is-invalid');
+    } else {
+      titleInputBottomForm.classList.remove('is-invalid');
+      titleInputBottomForm.classList.add('is-valid');
+    }
+  });
+
+  dateInputBottomForm.addEventListener('change', (event) => {
+    let dateInputBottomForm = event.target;
+    let valid = dateInputBottomForm.checkValidity();
+    if (!valid) {
+      dateInputBottomForm.classList.remove('is-valid');
+      dateInputBottomForm.classList.add('is-invalid');
+    } else {
+      dateInputBottomForm.classList.remove('is-invalid');
+      dateInputBottomForm.classList.add('is-valid');
+    }
+  });
+}

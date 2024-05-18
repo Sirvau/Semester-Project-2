@@ -102,39 +102,41 @@ export async function displayAllListings() {
 
 //Pagination
 
-let currentPage = 1;
+export async function pagination() {
+  let currentPage = 1;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const pageLinks = document.querySelectorAll('.page-number');
-  const prevPageLink = document.getElementById('prev-page');
-  const nextPageLink = document.getElementById('next-page');
+  document.addEventListener('DOMContentLoaded', () => {
+    const pageLinks = document.querySelectorAll('.page-number');
+    const prevPageLink = document.getElementById('prev-page');
+    const nextPageLink = document.getElementById('next-page');
 
-  pageLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
+    pageLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        currentPage = parseInt(event.target.getAttribute('data-page'));
+        loadListings(currentPage);
+      });
+    });
+
+    prevPageLink.addEventListener('click', (event) => {
       event.preventDefault();
-      currentPage = parseInt(event.target.getAttribute('data-page'));
+      if (currentPage > 1) {
+        currentPage--;
+        loadListings(currentPage);
+      }
+    });
+
+    nextPageLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      currentPage++;
       loadListings(currentPage);
     });
-  });
 
-  prevPageLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (currentPage > 1) {
-      currentPage--;
-      loadListings(currentPage);
-    }
-  });
-
-  nextPageLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    currentPage++;
     loadListings(currentPage);
   });
+}
 
-  loadListings(currentPage);
-});
-
-async function loadListings(pageNumber) {
+export async function loadListings(pageNumber) {
   showLoader();
   const listings = await getListings(pageNumber);
   const container = document.querySelector('#listing-card-container');
