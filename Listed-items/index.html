@@ -98,7 +98,7 @@
                       <div class="modal-body border-0">
                         <form
                           id="nav-create-listing-form"
-                          name="listingItemsFeedPage"
+                          name="listingIndexPage"
                           method="post"
                           class="container needs-validation"
                           novalidate
@@ -114,6 +114,7 @@
                                 Title</label
                               >
                               <input
+                                id="listing-title"
                                 type="text"
                                 name="listing-title"
                                 required
@@ -130,6 +131,7 @@
                                 >End date
                               </label>
                               <input
+                                id="date"
                                 type="date"
                                 class="form-control bg-primary mb-3"
                                 name="listing-date"
@@ -142,6 +144,7 @@
                                 >Tags
                               </label>
                               <input
+                                id="listing-tags"
                                 type="text"
                                 name="listing-tags"
                                 class="form-control bg-primary mb-3"
@@ -154,6 +157,7 @@
                                 >Media
                               </label>
                               <input
+                                id="listing-url"
                                 type="url"
                                 name="listing-url"
                                 class="form-control bg-primary mb-3"
@@ -188,6 +192,7 @@
                                       >Media
                                     </label>
                                     <input
+                                      id="listing-url-2"
                                       type="url"
                                       name="listing-url-2"
                                       class="form-control bg-primary mb-3"
@@ -198,6 +203,7 @@
                                       >Media
                                     </label>
                                     <input
+                                      id="listing-url-3"
                                       type="url"
                                       name="listing-url-3"
                                       class="form-control bg-primary mb-3"
@@ -215,6 +221,7 @@
                                 >Description
                               </label>
                               <textarea
+                                id="listing-description"
                                 type="textarea"
                                 name="listing-description"
                                 class="form-control bg-primary mb-3 pb-5"
@@ -408,7 +415,7 @@
                                 maxlength="20"
                                 title="Please enter a name with less than 20 characters"
                                 class="form-control bg-light mb-3"
-                                id="register-username"
+                                id="username"
                               />
                               <small class=""></small>
                             </div>

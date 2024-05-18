@@ -97,7 +97,7 @@
                       <div class="modal-body border-0">
                         <form
                           id="nav-create-listing-form"
-                          name="listingNavProfilePage"
+                          name="listingIndexPage"
                           method="post"
                           class="container needs-validation"
                           novalidate
@@ -113,6 +113,7 @@
                                 Title</label
                               >
                               <input
+                                id="listing-title"
                                 type="text"
                                 name="listing-title"
                                 required
@@ -129,6 +130,7 @@
                                 >End date
                               </label>
                               <input
+                                id="date"
                                 type="date"
                                 class="form-control bg-primary mb-3"
                                 name="listing-date"
@@ -141,6 +143,7 @@
                                 >Tags
                               </label>
                               <input
+                                id="listing-tags"
                                 type="text"
                                 name="listing-tags"
                                 class="form-control bg-primary mb-3"
@@ -153,6 +156,7 @@
                                 >Media
                               </label>
                               <input
+                                id="listing-url"
                                 type="url"
                                 name="listing-url"
                                 class="form-control bg-primary mb-3"
@@ -187,6 +191,7 @@
                                       >Media
                                     </label>
                                     <input
+                                      id="listing-url-2"
                                       type="url"
                                       name="listing-url-2"
                                       class="form-control bg-primary mb-3"
@@ -197,6 +202,7 @@
                                       >Media
                                     </label>
                                     <input
+                                      id="listing-url-3"
                                       type="url"
                                       name="listing-url-3"
                                       class="form-control bg-primary mb-3"
@@ -214,6 +220,7 @@
                                 >Description
                               </label>
                               <textarea
+                                id="listing-description"
                                 type="textarea"
                                 name="listing-description"
                                 class="form-control bg-primary mb-3 pb-5"
@@ -407,7 +414,7 @@
                                 maxlength="20"
                                 title="Please enter a name with less than 20 characters"
                                 class="form-control bg-light mb-3"
-                                id="register-username"
+                                id="username"
                               />
                               <small class=""></small>
                             </div>
@@ -536,7 +543,8 @@
             data-bs-toggle="modal"
             class="edit-icon"
             ><i class="fa-solid fa-user-pen fs-4 text-dark"></i
-          ></a>
+            ><span class="d-none">Edit Avatar</span></a
+          >
           <div
             class="modal fade"
             id="edit-avatar-modal-toggle"
@@ -584,11 +592,12 @@
                         class="d-flex justify-content-center align-center mt-4 row"
                       >
                         <label
-                          for="listing-url"
+                          for="avatar-url"
                           class="text-formatting text-start"
                           >Avatar Url
                         </label>
                         <input
+                          id="avatar-url"
                           type="url"
                           name="avatar"
                           class="form-control bg-primary mb-3"
@@ -616,10 +625,9 @@
         <div
           class="container user-info-container col-12 col-md-6 col-lg-5 my-5 py-5 border border-secondary rounded-bottom-3"
         >
-          <h1
-            id="user-name"
-            class="username main-header h2 text-formatting"
-          ></h1>
+          <h1 id="user-name" class="username main-header h2 text-formatting">
+            <span class="d-none">Username from data comes here</span>
+          </h1>
           <p
             id="user-credit"
             class="user-credit body-text text-formatting fw-bold fs-4 mt-4"
@@ -673,10 +681,14 @@
                       <div
                         class="d-flex justify-content-center align-center row"
                       >
-                        <label for="listing-title" class="text-formatting">
+                        <label
+                          for="listing-title-bottom-form"
+                          class="text-formatting"
+                        >
                           Title</label
                         >
                         <input
+                          id="listing-title-bottom-form"
                           type="text"
                           name="listing-title"
                           required
@@ -689,10 +701,11 @@
                       <div
                         class="d-flex justify-content-center align-center row"
                       >
-                        <label for="date" class="text-formatting"
+                        <label for="date-bottom-form" class="text-formatting"
                           >End date
                         </label>
                         <input
+                          id="date-bottom-form"
                           type="date"
                           class="form-control bg-primary mb-3"
                           name="listing-date"
@@ -701,10 +714,13 @@
                       <div
                         class="d-flex justify-content-center align-center row"
                       >
-                        <label for="listing-tags" class="text-formatting"
+                        <label
+                          for="listing-tags-bottom-form"
+                          class="text-formatting"
                           >Tags
                         </label>
                         <input
+                          id="listing-tags-bottom-form"
                           type="text"
                           name="listing-tags"
                           class="form-control bg-primary mb-3"
@@ -713,10 +729,13 @@
                       <div
                         class="d-flex justify-content-center align-center row"
                       >
-                        <label for="listing-url" class="text-formatting"
+                        <label
+                          for="listing-url-bottom-form"
+                          class="text-formatting"
                           >Media
                         </label>
                         <input
+                          id="listing-url-bottom-form"
                           type="url"
                           name="listing-url"
                           class="form-control bg-primary mb-3"
@@ -745,18 +764,24 @@
                             data-bs-parent="#accordionFlush"
                           >
                             <div class="accordion-body bg-primary">
-                              <label for="listing-url-2" class="text-formatting"
+                              <label
+                                for="listing-url-2-bottom-form"
+                                class="text-formatting"
                                 >Media
                               </label>
                               <input
+                                id="listing-url-2-bottom-form"
                                 type="url"
                                 name="listing-url-2"
                                 class="form-control bg-primary mb-3"
                               />
-                              <label for="listing-url-3" class="text-formatting"
+                              <label
+                                for="listing-url-3-bottom-form"
+                                class="text-formatting"
                                 >Media
                               </label>
                               <input
+                                id="listing-url-3-bottom-form"
                                 type="url"
                                 name="listing-url-3"
                                 class="form-control bg-primary mb-3"
@@ -769,11 +794,12 @@
                         class="d-flex justify-content-center align-center row"
                       >
                         <label
-                          for="listing-description"
+                          for="listing-description-bottom-form"
                           class="text-formatting mt-4"
                           >Description
                         </label>
                         <textarea
+                          id="listing-description-bottom-form"
                           type="textarea"
                           name="listing-description"
                           class="form-control bg-primary mb-3 pb-5"

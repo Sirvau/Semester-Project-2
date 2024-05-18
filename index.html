@@ -113,6 +113,7 @@
                                 Title</label
                               >
                               <input
+                                id="listing-title"
                                 type="text"
                                 name="listing-title"
                                 required
@@ -129,6 +130,7 @@
                                 >End date
                               </label>
                               <input
+                                id="date"
                                 type="date"
                                 class="form-control bg-primary mb-3"
                                 name="listing-date"
@@ -141,6 +143,7 @@
                                 >Tags
                               </label>
                               <input
+                                id="listing-tags"
                                 type="text"
                                 name="listing-tags"
                                 class="form-control bg-primary mb-3"
@@ -153,6 +156,7 @@
                                 >Media
                               </label>
                               <input
+                                id="listing-url"
                                 type="url"
                                 name="listing-url"
                                 class="form-control bg-primary mb-3"
@@ -187,6 +191,7 @@
                                       >Media
                                     </label>
                                     <input
+                                      id="listing-url-2"
                                       type="url"
                                       name="listing-url-2"
                                       class="form-control bg-primary mb-3"
@@ -197,6 +202,7 @@
                                       >Media
                                     </label>
                                     <input
+                                      id="listing-url-3"
                                       type="url"
                                       name="listing-url-3"
                                       class="form-control bg-primary mb-3"
@@ -214,6 +220,7 @@
                                 >Description
                               </label>
                               <textarea
+                                id="listing-description"
                                 type="textarea"
                                 name="listing-description"
                                 class="form-control bg-primary mb-3 pb-5"
@@ -407,7 +414,7 @@
                                 maxlength="20"
                                 title="Please enter a name with less than 20 characters"
                                 class="form-control bg-light mb-3"
-                                id="register-username"
+                                id="username"
                               />
                               <small class=""></small>
                             </div>
@@ -510,19 +517,7 @@
       </nav>
       <div
         class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-5"
-      >
-        <form class="d-none col-12 col-md-6" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
+      ></div>
     </header>
     <main class="container col-sm-11 mb-5">
       <section

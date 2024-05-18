@@ -2,7 +2,7 @@ import { login } from '../../auth/login.mjs';
 import { register } from '../../auth/registration.mjs';
 
 const registerForm = document.getElementById('register-form');
-let usernameInput = document.getElementById('register-username');
+let usernameInput = document.getElementById('username');
 let emailInput = document.getElementById('register-email');
 let passwordInput = document.getElementById('register-password');
 
