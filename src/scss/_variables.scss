@@ -12,6 +12,7 @@ $dark-brown: #2d0f00;
 $green: #83ab99;
 $light-green: #badfce;
 $dark-green: #435a4f;
+$red: #e8222e;
 
 // Colors-map
 $colors: (
@@ -26,6 +27,7 @@ $colors: (
   'green': $green,
   'light-green': $light-green,
   'dark-green': $dark-green,
+  'red': $red,
 );
 
 // Theme-color-variables
@@ -41,6 +43,7 @@ $attention-light: $light-green;
 $attention-dark: $dark-green;
 $light: $light-pink;
 $dark: $dark-brown;
+$invalid: $red;
 
 // Theme-colors-map
 $theme-colors: (
@@ -56,6 +59,7 @@ $theme-colors: (
   'attention-dark': $attention-dark,
   'light': $light,
   'dark': $dark,
+  'invalid': $invalid,
 );
 
 // ------------------------------------------------------------ Font variables--------------------------------------------------------------------------------------------

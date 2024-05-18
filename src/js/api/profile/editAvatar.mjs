@@ -1,6 +1,10 @@
 import { API_BASE, API_PROFILES, API_KEY } from '../constants.mjs';
 import { load } from '../storage/load.mjs';
 
+const editAvatarFormValidation = document.getElementById(
+  'validation-avatar-form-feedback',
+);
+
 export async function editAvatar(avatarData) {
   const profile = load('profile');
   const editAvatarUrl = `${API_BASE}${API_PROFILES}/${profile.name}`;
@@ -23,6 +27,7 @@ export async function editAvatar(avatarData) {
       return await result;
     }
   } catch (error) {
+    editAvatarFormValidation.classList.remove('d-none');
     console.error('Could not edit avatar', error);
     throw error;
   }

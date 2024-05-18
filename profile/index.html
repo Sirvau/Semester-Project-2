@@ -20,6 +20,7 @@
       type="module"
       src="../src/js/api/profile/displayProfile.mjs"
     ></script>
+    <script defer type="module" src="../src/js/api/routes/profile.mjs"></script>
 
     <link rel="stylesheet" href="../dist/css/index.css" />
     <meta description="Your personal profile on Last Bid Auction. " />
@@ -116,12 +117,20 @@
                                 id="listing-title"
                                 type="text"
                                 name="listing-title"
+                                minlength="3"
                                 required
-                                class="form-control bg-primary mb-3"
+                                class="form-control bg-primary mb-1"
                                 data-toggle="tooltip"
                                 data-placement="top"
                                 title="Please enter the title of you post"
                               />
+                              <small
+                                id="validation-listing-title-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter a title with more than 2
+                                characters.
+                              </small>
                             </div>
                             <div
                               class="d-flex justify-content-center align-center row"
@@ -132,9 +141,18 @@
                               <input
                                 id="date"
                                 type="date"
-                                class="form-control bg-primary mb-3"
+                                min="2024-05-19"
+                                max="2028-09-30"
+                                required
+                                class="form-control bg-primary mb-1"
                                 name="listing-date"
                               />
+                              <small
+                                id="validation-listing-date-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter valid date.
+                              </small>
                             </div>
                             <div
                               class="d-flex justify-content-center align-center row"
@@ -230,7 +248,14 @@
                                 required
                               ></textarea>
                             </div>
+                            <small
+                              id="validation-listing-form-feedback"
+                              class="mb-2 text-center body-text text-invalid d-none"
+                            >
+                              Please fill out the form correctly.
+                            </small>
                           </div>
+
                           <div
                             class="container d-flex justify-content-center pb-3 mb-5"
                           >
@@ -308,16 +333,22 @@
                                 name="email"
                                 required
                                 pattern="^[\w\-.]+@stud\.noroff\.no$"
-                                class="form-control bg-primary mb-3"
+                                class="form-control bg-primary mb-1"
                                 id="login-email"
                               />
+                              <small
+                                id="validation-login-email-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter a registered email address.
+                              </small>
                             </div>
                             <div
                               class="d-flex justify-content-center align-center row"
                             >
                               <label
                                 for="login-password"
-                                class="text-formatting"
+                                class="text-formatting mt-2"
                                 >Password</label
                               >
                               <input
@@ -328,6 +359,12 @@
                                 class="form-control bg-primary mb-3"
                                 id="login-password"
                               />
+                              <small
+                                id="validation-login-password-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter a registered password.
+                              </small>
                             </div>
                           </div>
                           <div
@@ -409,14 +446,19 @@
                               <input
                                 type="text"
                                 name="username"
-                                required
                                 pattern="^[\w]+$"
                                 maxlength="20"
-                                title="Please enter a name with less than 20 characters"
-                                class="form-control bg-light mb-3"
+                                minlength="2"
+                                class="form-control bg-light mb-1"
                                 id="username"
                               />
-                              <small class=""></small>
+                              <small
+                                id="validation-username-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please choose a username between 2-20
+                                characters.
+                              </small>
                             </div>
 
                             <div
@@ -434,10 +476,17 @@
                                 pattern="^[\w\-.]+@stud\.noroff\.no$"
                                 required
                                 title="Please enter an email containing stud@noroff.no"
-                                class="form-control bg-primary mb-3"
+                                class="form-control bg-primary mb-1"
                                 id="register-email"
                               />
+                              <small
+                                id="validation-email-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please register with an stud.noroff-email.
+                              </small>
                             </div>
+
                             <div
                               class="d-flex justify-content-center align-center row"
                             >
@@ -451,10 +500,17 @@
                                 name="password"
                                 minlength="8"
                                 required
-                                class="form-control bg-primary mb-3"
+                                class="form-control bg-primary mb-1"
                                 title="Please enter a password with 8 characters or more"
                                 id="register-password"
                               />
+                              <small
+                                id="validation-password-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please register a password with at least 8
+                                characters.
+                              </small>
                             </div>
                           </div>
                           <div
@@ -577,6 +633,7 @@
                     name="authAvatar"
                     method="PUT"
                     class="container needs-validation"
+                    novalidate
                   >
                     <div
                       class="form-group row my-1 justify-content-center mx-5 px-4"
@@ -601,9 +658,23 @@
                           type="url"
                           name="avatar"
                           class="form-control bg-primary mb-3"
+                          required
                         />
+                        <small
+                          id="validation-edit-avatar-feedback"
+                          class="invalid-feedback mb-2"
+                        >
+                          Please enter a valid URL to a public and accessible
+                          image.
+                        </small>
                       </div>
                     </div>
+                    <small
+                      id="validation-avatar-form-feedback"
+                      class="mb-2 text-center body-text text-invalid d-none"
+                    >
+                      Please bid higher than current bid.
+                    </small>
                     <div
                       class="container d-flex justify-content-center pb-3 mb-5 mt-4"
                     >
@@ -691,12 +762,19 @@
                           id="listing-title-bottom-form"
                           type="text"
                           name="listing-title"
+                          minlength="3"
                           required
                           class="form-control bg-primary mb-3"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Please enter the title of you post"
                         />
+                        <small
+                          id="validation-listing-title-feedback"
+                          class="invalid-feedback mb-2"
+                        >
+                          Please enter a title with more than 2 characters.
+                        </small>
                       </div>
                       <div
                         class="d-flex justify-content-center align-center row"
@@ -707,9 +785,18 @@
                         <input
                           id="date-bottom-form"
                           type="date"
+                          required
+                          min="2024-05-19"
+                          max="2028-09-30"
                           class="form-control bg-primary mb-3"
                           name="listing-date"
                         />
+                        <small
+                          id="validation-listing-date-feedback"
+                          class="invalid-feedback mb-2"
+                        >
+                          Please enter valid date.
+                        </small>
                       </div>
                       <div
                         class="d-flex justify-content-center align-center row"
@@ -809,6 +896,12 @@
                           required
                         ></textarea>
                       </div>
+                      <small
+                        id="validation-bottom-listing-form-feedback"
+                        class="mb-2 text-center body-text text-invalid d-none"
+                      >
+                        Please fill out the form correctly.
+                      </small>
                     </div>
                     <div
                       class="container d-flex justify-content-center pb-3 mb-5"

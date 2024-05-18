@@ -31,3 +31,16 @@ export function editAvatarListener() {
     console.error('Error adding edit avatar listener', error);
   }
 }
+
+// Check validity
+
+let urlInputAvatar = document.getElementById('avatar-url');
+
+urlInputAvatar.addEventListener('change', (event) => {
+  let urlInputAvatar = event.target;
+  let valid = urlInputAvatar.checkValidity();
+  if (!valid) {
+    urlInputAvatar.classList.remove('is-valid');
+    urlInputAvatar.classList.add('is-invalid');
+  }
+});

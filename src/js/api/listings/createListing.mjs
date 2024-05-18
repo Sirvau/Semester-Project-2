@@ -1,7 +1,14 @@
 import { API_BASE, API_KEY, API_LISTINGS } from '../constants.mjs';
 import { load } from '../storage/load.mjs';
 
-//Create Listing
+//Create and Validate Listing
+const navFormValidation = document.getElementById(
+  'validation-listing-form-feedback',
+);
+
+const bottomFormValidation = document.getElementById(
+  'validation-bottom-listing-form-feedback',
+);
 
 export async function createListing(listingData) {
   try {
@@ -19,6 +26,8 @@ export async function createListing(listingData) {
     if (response.ok) {
       return await response.json();
     } else {
+      navFormValidation.classList.remove('d-none');
+      bottomFormValidation.classList.remove('d-none');
       throw new Error('Failed to create listing');
     }
   } catch (error) {
