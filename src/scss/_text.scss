@@ -1,0 +1,36 @@
+@import 'variables';
+
+//Text
+$font-family-main-header: 'Playful Display';
+$body-letter-spacing: 2px;
+$hover-font-weight: 600;
+
+.text-formatting {
+  text-transform: uppercase;
+  letter-spacing: $body-letter-spacing;
+}
+
+.main-header {
+  font-family: $font-family-main-header;
+}
+
+.body-text {
+  font-family: $font-family-sans-serif;
+  color: $dark-brown;
+}
+
+h3,
+h4 {
+  font-weight: 300;
+}
+
+// Text break line
+
+hr {
+  border-top: 1px dashed $secondary;
+}
+
+//inputs
+.hidden {
+  display: none;
+}

@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/81a562339c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="./src/js/api/index.mjs"></script>
+    <script
+      defer
+      type="module"
+      src="./src/js/api/routes/landingPage.mjs"
+    ></script>
+
+    <link rel="stylesheet" href="dist/css/index.css" />
+
+    <meta
+      description="
+    Welcome to Last Bid Auction Site. The best auction for unique quality items.
+    "
+    />
+
+    <title>Home | Last Bid</title>
+  </head>
+  <body class="bg-primary text-dark overflow-x-hidden overflow-y-auto">
+    <header class="container col-sm-11">
+      <nav class="navbar navbar-expand-lg mb-5">
+        <div class="container-fluid">
+          <a class="navbar-brand col-4" href="#">
+            <img
+              id="logo-last-bid"
+              src="/src/images/logo_Last_Bid.png"
+              alt="Logo Last Bid Auction Site"
+              width="150"
+              height="190"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item me-4">
+                <a class="nav-link text-formatting fs-5" href="/Listed-items/"
+                  >Listed Items</a
+                >
+              </li>
+              <li class="nav-item me-4">
+                <a
+                  type="button"
+                  class="nav-link text-formatting toggleHideElement fs-5"
+                  id="link-post-a-listing"
+                  data-bs-target="#add-listing-modal-toggle"
+                  data-bs-toggle="modal"
+                  href="#"
+                  >Post a Listing</a
+                >
+                <div
+                  class="modal fade"
+                  id="add-listing-modal-toggle"
+                  aria-hidden="true"
+                  aria-labelledby="add-listing-modal-toggle-label"
+                  tabindex="-1"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 container bg-primary">
+                      <div class="modal-header border-0 row">
+                        <button
+                          type="button"
+                          class="btn-close row"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                        <div>
+                          <h1
+                            class="main-header text-formatting text-center h2 mt-3 mb-1"
+                            id="add-listing-modal-toggle-label"
+                          >
+                            Post Listing
+                          </h1>
+                          <hr />
+                        </div>
+                      </div>
+                      <div class="modal-body border-0">
+                        <form
+                          id="nav-create-listing-form"
+                          name="listingIndexPage"
+                          method="post"
+                          class="container needs-validation"
+                          novalidate
+                        >
+                          <div class="form-group mx-5 px-4 my-3">
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label
+                                for="listing-title"
+                                class="text-formatting"
+                              >
+                                Title</label
+                              >
+                              <input
+                                id="listing-title"
+                                type="text"
+                                name="listing-title"
+                                minlength="3"
+                                required
+                                class="form-control bg-primary mb-1"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Please enter the title of you post"
+                              />
+                              <small
+                                id="validation-listing-title-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter a title with more than 2
+                                characters.
+                              </small>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label for="date" class="text-formatting"
+                                >End date
+                              </label>
+                              <input
+                                id="date"
+                                type="date"
+                                min="2024-05-19"
+                                max="2028-09-30"
+                                required
+                                class="form-control bg-primary mb-1"
+                                name="listing-date"
+                              />
+                              <small
+                                id="validation-listing-date-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter valid date.
+                              </small>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label for="listing-tags" class="text-formatting"
+                                >Tags
+                              </label>
+                              <input
+                                id="listing-tags"
+                                type="text"
+                                name="listing-tags"
+                                class="form-control bg-primary mb-3"
+                              />
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label for="listing-url" class="text-formatting"
+                                >Media
+                              </label>
+                              <input
+                                id="listing-url"
+                                type="url"
+                                name="listing-url"
+                                class="form-control bg-primary mb-3"
+                              />
+                            </div>
+                            <div
+                              class="accordion accordion-flush"
+                              id="accordionFlush"
+                            >
+                              <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button
+                                    class="accordion-button collapsed bg-primary body-text"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne"
+                                    aria-expanded="false"
+                                    aria-controls="flush-collapseOne"
+                                  >
+                                    Add more images
+                                  </button>
+                                </h2>
+                                <div
+                                  id="flush-collapseOne"
+                                  class="accordion-collapse collapse"
+                                  data-bs-parent="#accordionFlush"
+                                >
+                                  <div class="accordion-body bg-primary">
+                                    <label
+                                      for="listing-url-2"
+                                      class="text-formatting"
+                                      >Media
+                                    </label>
+                                    <input
+                                      id="listing-url-2"
+                                      type="url"
+                                      name="listing-url-2"
+                                      class="form-control bg-primary mb-3"
+                                    />
+                                    <label
+                                      for="listing-url-3"
+                                      class="text-formatting"
+                                      >Media
+                                    </label>
+                                    <input
+                                      id="listing-url-3"
+                                      type="url"
+                                      name="listing-url-3"
+                                      class="form-control bg-primary mb-3"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label
+                                for="listing-description"
+                                class="text-formatting mt-4"
+                                >Description
+                              </label>
+                              <textarea
+                                id="listing-description"
+                                type="textarea"
+                                name="listing-description"
+                                class="form-control bg-primary mb-3 pb-5"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Please enter a description for your listing."
+                                required
+                              ></textarea>
+                            </div>
+                            <small
+                              id="validation-listing-form-feedback"
+                              class="mb-2 text-center body-text text-invalid d-none"
+                            >
+                              Please fill out the form correctly.
+                            </small>
+                          </div>
+
+                          <div
+                            class="container d-flex justify-content-center pb-3 mb-5"
+                          >
+                            <button
+                              class="btn btn-attention text-formatting px-5 py-2"
+                              type="submit"
+                              value="submit"
+                              id="add-listing"
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item me-4">
+                <a
+                  type="button"
+                  id="login-nav-button"
+                  class="nav-link text-formatting fs-5"
+                  data-bs-target="#login-modal-toggle"
+                  data-bs-toggle="modal"
+                  href="#"
+                  >Log in
+                  <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+                <div
+                  class="modal fade"
+                  id="login-modal-toggle"
+                  aria-hidden="true"
+                  aria-labelledby="login-modal-toggle-label"
+                  tabindex="-1"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 container bg-primary">
+                      <div class="modal-header border-0 row">
+                        <button
+                          type="button"
+                          class="btn-close row"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                        <div>
+                          <h1
+                            class="main-header text-formatting text-center h2 mt-3 mb-1"
+                            id="login-modal-toggle-label"
+                          >
+                            Log in
+                          </h1>
+                          <hr />
+                        </div>
+                      </div>
+                      <div class="modal-body border-0">
+                        <form
+                          id="log-in-form"
+                          name="auth"
+                          method="post"
+                          class="container"
+                        >
+                          <div
+                            class="form-group row my-3 justify-content-center mx-5 px-4"
+                          >
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label for="login-email" class="text-formatting">
+                                Email
+                              </label>
+                              <input
+                                type="email"
+                                name="email"
+                                required
+                                pattern="^[\w\-.]+@stud\.noroff\.no$"
+                                class="form-control bg-primary mb-1"
+                                id="login-email"
+                              />
+                              <small
+                                id="validation-login-email-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter a registered email address.
+                              </small>
+                            </div>
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label
+                                for="login-password"
+                                class="text-formatting mt-2"
+                                >Password</label
+                              >
+                              <input
+                                type="password"
+                                name="password"
+                                minlength="8"
+                                required
+                                class="form-control bg-primary mb-3"
+                                id="login-password"
+                              />
+                              <small
+                                id="validation-login-password-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please enter a registered password.
+                              </small>
+                            </div>
+                          </div>
+                          <div
+                            class="container d-flex justify-content-center mb-3"
+                          >
+                            <button
+                              class="btn btn-attention text-formatting px-5 py-2"
+                              type="submit"
+                              value="submit"
+                              id="login-button"
+                              data-auth="login"
+                            >
+                              Log in
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      <hr />
+                      <div
+                        class="container modal-footer d-flex justify-content-center align-items center border-0 mb-4 mt-2"
+                      >
+                        <p class="me-3">New user?</p>
+                        <button
+                          class="btn btn-outline-tertiary text-formatting px-3 py-2 text-dark"
+                          type="button"
+                          data-bs-target="#register-modal-toggle"
+                          data-bs-toggle="modal"
+                        >
+                          Register
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="modal fade"
+                  id="register-modal-toggle"
+                  aria-hidden="true"
+                  aria-labelledby="register-modal-toggle-label"
+                  tabindex="-1"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 container bg-primary">
+                      <div class="modal-header border-0 row">
+                        <button
+                          type="button"
+                          class="btn-close row"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                        <div>
+                          <h1
+                            class="main-header text-formatting text-center h2 mt-3 mb-1"
+                            id="register-modal-toggle-label"
+                          >
+                            Register
+                          </h1>
+                          <hr />
+                        </div>
+                      </div>
+                      <div class="modal-body border-0">
+                        <form
+                          id="register-form"
+                          name="authRegister"
+                          method="post"
+                          class="container needs-validation"
+                          novalidate
+                        >
+                          <div class="form-group my-3 mx-5 px-5">
+                            <div
+                              class="d-flex col justify-content-center align-center row"
+                            >
+                              <label
+                                for="username"
+                                class="col-form-label text-formatting"
+                                >Username
+                              </label>
+                              <input
+                                type="text"
+                                name="username"
+                                pattern="^[\w]+$"
+                                maxlength="20"
+                                minlength="2"
+                                class="form-control bg-light mb-1"
+                                id="username"
+                              />
+                              <small
+                                id="validation-username-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please choose a username between 2-20
+                                characters.
+                              </small>
+                            </div>
+
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label
+                                for="register-email"
+                                class="text-formatting"
+                              >
+                                Email</label
+                              >
+                              <input
+                                type="email"
+                                name="email"
+                                pattern="^[\w\-.]+@stud\.noroff\.no$"
+                                required
+                                title="Please enter an email containing stud@noroff.no"
+                                class="form-control bg-primary mb-1"
+                                id="register-email"
+                              />
+                              <small
+                                id="validation-email-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please register with an stud.noroff-email.
+                              </small>
+                            </div>
+
+                            <div
+                              class="d-flex justify-content-center align-center row"
+                            >
+                              <label
+                                for="register-password"
+                                class="text-formatting"
+                                >Password
+                              </label>
+                              <input
+                                type="password"
+                                name="password"
+                                minlength="8"
+                                required
+                                class="form-control bg-primary mb-1"
+                                title="Please enter a password with 8 characters or more"
+                                id="register-password"
+                              />
+                              <small
+                                id="validation-password-feedback"
+                                class="invalid-feedback mb-2"
+                              >
+                                Please register a password with at least 8
+                                characters.
+                              </small>
+                            </div>
+                          </div>
+                          <div
+                            class="container d-flex justify-content-center mb-3"
+                          >
+                            <button
+                              class="btn btn-attention text-formatting px-5 py-2"
+                              type="submit"
+                              value="submit"
+                              data-bs-target="#login-modal-toggle"
+                              id="register-button"
+                              data-auth="register"
+                            >
+                              Register
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      <hr />
+                      <div
+                        class="container modal-footer d-flex justify-content-center align-items center border-0 mb-4 mt-2"
+                      >
+                        <p class="me-3">Already an account?</p>
+                        <button
+                          class="btn btn-outline-tertiary text-formatting text-dark px-3 py-2"
+                          type="button"
+                          value=""
+                          data-bs-target="#login-modal-toggle"
+                          data-bs-toggle="modal"
+                        >
+                          Log in
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item me-4">
+                <a
+                  id="logout-nav-button"
+                  type="button"
+                  class="nav-link text-formatting toggleHideElement fs-5"
+                  href="#"
+                  >Log out
+                </a>
+              </li>
+
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-formatting toggleHideElement"
+                  href="/profile/"
+                >
+                  <span class="d-none">Profile </span>
+                  <i class="fa-regular fa-user fs-5"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="container-fluid bg-secondary d-flex justify-content-center justify-content-md-end py-5"
+      ></div>
+    </header>
+    <main class="container col-sm-11 mb-5">
+      <section
+        id="hero-section"
+        class="bg-primary-details-dark row-11 d-md-inline-flex"
+      >
+        <div class="py-4 text-center col-12 col-md-6">
+          <h1 class="main-header text-formatting mt-2 my-lg-3">
+            New<span class="text-lowercase d-block"> extraordenary </span>art
+          </h1>
+          <h2 class="body-text text-formatting mt-md-5 h3">up for bids</h2>
+        </div>
+        <div class="text-center col-12 col-md-6 p-4">
+          <img
+            class="img-fluid"
+            id="hero-art"
+            src="/src/images/index_hero_art.jpg"
+            alt="Framed art on top of furniture, promoting art listings"
+          />
+          <a
+            href="/Listed-items/?_tag=art"
+            class="btn btn-secondary text-formatting col-12 my-3 py-2"
+            >Explore art <i class="fa-solid fa-angle-right"> </i
+          ></a>
+        </div>
+      </section>
+      <section
+        class="row-11 mt-5 text-center d-md-inline-flex justify-content-evenly"
+      >
+        <div
+          class="bg-tertiary-details-dark col col-md-5 mt-5 mt-sm-2 py-4 px-5"
+        >
+          <h2
+            class="main-header text-formatting text-primary body-letter-spacing my-4"
+          >
+            Time Keepers
+          </h2>
+          <img
+            class="img-fluid"
+            id="hero-art"
+            src="/src/images/index_explore_time_keepers.jpg"
+            alt="Wooden antiqe clock in front of wall with wallpaper"
+          />
+          <a
+            href="/Listed-items/?_tag=timekeeper"
+            class="btn btn-tertiary text-formatting col-12 my-3 py-2"
+            >Explore Timekeepers <i class="fa-solid fa-angle-right"> </i
+          ></a>
+        </div>
+        <div
+          class="bg-attention-dark d-none d-md-block col col-md-5 mt-5 mt-sm-2 py-4 px-5"
+        >
+          <h2
+            class="main-header text-formatting text-primary body-letter-spacing my-4"
+          >
+            Furnitures
+          </h2>
+          <img
+            class="img-fluid"
+            id="hero-art"
+            src="/src/images/index_explore_furnitures.jpg"
+            alt="Soft green chair in livingroom"
+          />
+          <a
+            href="/Listed-items/?_tag=furniture"
+            class="btn btn-attention text-formatting col-12 my-3 py-2"
+            >Explore furnitures <i class="fa-solid fa-angle-right"> </i
+          ></a>
+        </div>
+      </section>
+
+      <section
+        class="d-flex row justify-content-center text-center bg-dark my-5 py-5"
+      >
+        <h2
+          class="text-primary main-header text-formatting body-letter-spacing mb-5"
+        >
+          Recent Listings
+        </h2>
+        <div
+          class="d-flex justify-content-center d-none loader mt-5 text-secondary"
+        >
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <div
+          id="recent-listings-main-container"
+          class="container d-flex justify-content-center justify-content-md-evenly row flex-wrap"
+        ></div>
+      </section>
+      <div class="text-center">
+        <a href="#" role="button"
+          ><span class="d-none">To top</span
+          ><i class="fa-solid fa-chevron-up text-dark"></i
+        ></a>
+      </div>
+    </main>
+    <footer class="bg-primary-details mt-5 py-5 text-center">
+      <a class="navbar-brand" href="#">
+        <img
+          class="mb-5"
+          id="logo-last-bid"
+          src="/src/images/logo_Last_Bid.png"
+          alt="Logo Last Bid Auction Site"
+          width="150"
+          height="190"
+        />
+      </a>
+      <div class="d-flex justify-content-center">
+        <a href="https://www.instagram.com/"
+          ><span class="d-none">Instagram</span
+          ><i class="fa-brands fa-instagram p-2 m-2 text-secondary fs-2"></i
+        ></a>
+        <a href="https://www.facebook.com/"
+          ><span class="d-none">Facebook</span
+          ><i class="fa-brands fa-facebook p-2 m-2 text-secondary fs-2"></i
+        ></a>
+        <a href="https://twitter.com/"
+          ><span class="d-none">X/Twitter</span
+          ><i class="fa-brands fa-x-twitter p-2 m-2 text-secondary fs-2"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>

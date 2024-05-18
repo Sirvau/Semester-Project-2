@@ -1,0 +1,123 @@
+// ------------------------------------------------------------ Theme color variables--------------------------------------------------------------------------------------------
+
+// Color-variables
+$blue: #aebdc2;
+$light-blue: #d5e7ed;
+$dark-blue: #5a686d;
+$pink: #f7d7ca;
+$light-pink: #fef1e9;
+$dark-pink: #f5c6af;
+$cognac-brown: #5f1f01;
+$dark-brown: #2d0f00;
+$green: #83ab99;
+$light-green: #badfce;
+$dark-green: #435a4f;
+$red: #e8222e;
+
+// Colors-map
+$colors: (
+  'blue': $blue,
+  'light-blue': $light-blue,
+  'dark-blue': $dark-blue,
+  'pink': $pink,
+  'light-pink': $light-pink,
+  'dark-pink': $dark-pink,
+  'cognac-brown': $cognac-brown,
+  'dark-brown': $dark-brown,
+  'green': $green,
+  'light-green': $light-green,
+  'dark-green': $dark-green,
+  'red': $red,
+);
+
+// Theme-color-variables
+$primary: $light-pink;
+$primary-details: $pink;
+$primary-details-dark: $dark-pink;
+$secondary: $cognac-brown;
+$tertiary: $blue;
+$tertiary-details-light: $light-blue;
+$tertiary-details-dark: $dark-blue;
+$attention: $green;
+$attention-light: $light-green;
+$attention-dark: $dark-green;
+$light: $light-pink;
+$dark: $dark-brown;
+$invalid: $red;
+
+// Theme-colors-map
+$theme-colors: (
+  'primary': $primary,
+  'primary-details': $primary-details,
+  'primary-details-dark': $primary-details-dark,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+  'tertiary-details-light': $tertiary-details-light,
+  'tertiary-details-dark': $tertiary-details-dark,
+  'attention': $attention,
+  'attention-light': $attention-light,
+  'attention-dark': $attention-dark,
+  'light': $light,
+  'dark': $dark,
+  'invalid': $invalid,
+);
+
+// ------------------------------------------------------------ Font variables--------------------------------------------------------------------------------------------
+
+// Font-families
+$font-family-sans-serif:
+  'Open Sans',
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  'Noto Sans',
+  'Liberation Sans',
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji';
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  'Liberation Mono', 'Courier New', monospace;
+// stylelint-enable value-keyword-case
+$font-family-base: var(--#{$prefix}font-sans-serif);
+$font-family-code: var(--#{$prefix}font-monospace);
+
+// Font-sizes
+$h1-font-size: $font-size-base * 4;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base !default;
+
+// Buttons
+
+// Border
+$border-width: 1px;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+);
+
+$border-style: dashed;
+$border-color: $secondary;
+$border-color-translucent: $secondary;
+$border-radius: 0.375rem;
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
+$border-radius-xxl: 2rem;
+$border-radius-pill: 50rem;
+
+//Pagination
+$pagination-border-color: $primary;
+$pagination-bg: $primary;
+$pagination-color: $dark;
+$pagination-hover-color: $dark;
+$pagination-hover-bg: $primary-details;
