@@ -54,4 +54,6 @@ npm install
 
 ## Deployment
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0dee85ba-bd25-4647-810d-84e3bd9eaff9/deploy-status)](https://app.netlify.com/sites/comforting-wisp-5dec4d/deploys)
+[Last Bid Auction](https://tourmaline-truffle-c99c55.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a9b70b6a-eabe-47e5-bd9e-56149a414581/deploy-status)](https://app.netlify.com/sites/tourmaline-truffle-c99c55/deploys)
