@@ -2,6 +2,10 @@
 
 ![Alt text](./src/images/Skjermbilde%202024-05-19%20202648.png)
 
+This project is a front-end application for an auction website, enabling users to create listings for items to be auctioned and bid on items listed by others. Users receive 1000 credits upon registration, which they can use to place bids on items. Non-registered users can browse through listings but need to register to participate in auctions.
+
+The project utilizes existing API endpoints provided by Noroff for managing auction functionality.
+
 ## Built with
 
 - [HTML5](https://html.spec.whatwg.org/multipage/)
