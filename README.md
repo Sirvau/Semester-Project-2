@@ -1,6 +1,6 @@
 # Semester Project 2: Auction House
 
-![Alt text](./src/images/Skjermbilde%202024-05-19%20202648.png>)
+![Alt text](./src/images/Skjermbilde%202024-05-19%20202648.png)
 
 ## Built with
 
