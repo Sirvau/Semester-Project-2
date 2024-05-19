@@ -4,14 +4,14 @@
 
 ## Built with
 
-[HTML5](https://html.spec.whatwg.org/multipage/)
-[Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-[JavaScript](https://www.javascript.com/)
+- [HTML5](https://html.spec.whatwg.org/multipage/)
+- [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [JavaScript](https://www.javascript.com/)
 
 ## Linting
 
-[Eslint](https://eslint.org/)
-[Prettier](https://prettier.io/)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
 ## Getting Started
 
