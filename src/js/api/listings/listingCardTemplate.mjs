@@ -77,6 +77,7 @@ export function listingCardTemplate(listingData) {
       'mt-5',
       'mb-1',
       'text-formatting',
+      'rounded-top-0',
     );
     bidLink.textContent = `Bid`;
     bidLink.href = `/add-bid/?id=${listingData.id}`;
