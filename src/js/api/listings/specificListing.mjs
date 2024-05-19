@@ -134,6 +134,7 @@ export async function displaySpecificListing() {
         'px-5',
         'py-2',
         'bg-tertiary',
+        'rounded-top-0',
       );
 
       placeBidLinkContainer.appendChild(placeBidLink);
