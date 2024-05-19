@@ -1,12 +1,17 @@
 # Semester Project 2: Auction House
 
+![Alt text](./src/images/Skjermbilde%202024-05-19%20202648.png>)
+
 ## Built with
-![image]({https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white})
-![image]({https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1})
+
+[HTML5](https://html.spec.whatwg.org/multipage/)
+[Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+[JavaScript](https://www.javascript.com/)
 
 ## Linting
-![image]({https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white})
-![image]({https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E})
+
+[Eslint](https://eslint.org/)
+[Prettier](https://prettier.io/)
 
 ## Getting Started
 
