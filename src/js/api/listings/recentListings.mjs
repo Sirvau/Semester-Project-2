@@ -84,6 +84,7 @@ export function recentListingsTemplate(listingData) {
       'd-block',
       'mx-1',
       'mt-5',
+      'text-formatting',
     );
     bidLink.textContent = `Bid`;
     bidLink.href = `/add-bid/?id=${listingData.id}`;
